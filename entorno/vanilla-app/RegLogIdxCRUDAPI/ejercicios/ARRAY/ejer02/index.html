@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01 – Operaciones con Matrices</title>
+    <link rel="icon" href="../../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../../js/indexedDB/indexedDB.js" defer></script>
+    <script src="../../../js/indexedDB/getIndexedDB.js" defer></script>
+    <script src="../../../js/sesion.js" defer></script>
+    <script src="../../../js/auth.js" defer></script>
+    <script src="../../../js/menu.js" defer></script>
+    <script src="../js/aleatorio.js" defer></script>
+    <script src="../js/generaMatriz.js" defer></script>
+    <script src="../js/mostrarMatriz.js" defer></script>
+    <script src="../js/rellena.js" defer></script>
+    <script src="../js/sumarMatrices.js" defer></script>
+    <script src="../js/restarMatrices.js" defer></script>
+    <script src="../js/multiplicarMatrices.js" defer></script>
+    <script src="./js/repetir.js" defer></script>
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 01 – Operaciones con Matrices</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Operaciones con matrices</div>
+                <div class="cardBody">
+                    <form action="">
+                        <fieldset>
+                            <legend>Rangos:</legend>
+                            <label for="dimension">Dimensión cuadrada de las matrices:</label>
+                            <input id="dimension" type="text" name="dimension"></br></br>
+                            <label for="inferior">Rango inferior aleatorio:</label>
+                            <input id="inferior" type="text" name="inferior">&nbsp;&nbsp;
+                            <label for="superior">Rango superior aleatorio:</label>
+                            <input id="superior" type="text" name="superior">
+                            </br></br>
+                            <input id="valores" type="button" name="valores" value="Valores Aleatorios">&nbsp;&nbsp;
+                            <input id="genera" type="button" name="genera" value="Genera Matrices">
+                            </br></br>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Testeo:</legend>
+                            <input id="aleatorio" type="button" value="Aleatorio">&nbsp;&nbsp;
+                            <input id="parar" type="button" value="Parar">&nbsp;&nbsp;
+                            <input id="rapido" type="button" value="Rápido">&nbsp;&nbsp;
+                            <input id="lento" type="button" value="Lento">
+                            </br></br>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Operaciones:</legend>
+                            <div class="matrices">
+                                <label for="matrizA">Matriz A:</label>
+                                <div id="matrizA"></div>
+                            </div>
+                            <div class="matrices">
+                                <label for="matrizB">Matriz B:</label>
+                                <div id="matrizB"></div>
+                            </div>
+                            <div id="operadores">
+                                <input id="suma" type="button" name="suma" value="+">&nbsp;&nbsp;
+                                <input id="resta" type="button" name="resta" value="-">&nbsp;&nbsp;
+                                <input id="multiplica" type="button" name="multiplica" value="*">&nbsp;&nbsp;
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Resultado:</legend>
+                            <div class="matrices">
+                                <label for="matrizC">Matriz C:</label>
+                                <div id="matrizC"></div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="cardFooter"><a href="../../../index.html">&gt;&gt; Página principal</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "fp-devsetup-api",
+  "version": "1.0.0",
+  "description": "API Node.js para accesoDB, dbzDB y superheroDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "jota",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

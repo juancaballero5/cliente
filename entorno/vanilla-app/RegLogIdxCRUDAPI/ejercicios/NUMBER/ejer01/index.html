@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01 – Mini Calculadora</title>
+    <link rel="icon" href="../../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../../js/indexedDB/indexedDB.js" defer></script>
+    <script src="../../../js/indexedDB/getIndexedDB.js" defer></script>
+    <script src="../../../js/sesion.js" defer></script>
+    <script src="../../../js/auth.js" defer></script>
+    <script src="../../../js/menu.js" defer></script>
+    <script src="../js/validar.js" type="text/javascript" defer></script>
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 01 – Mini Calculadora</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Mini calculadora</div>
+                <div class="cardBody">
+                    <fieldset>
+                        <legend>Operaciones:</legend>
+                        <label>Operando 1:</label>
+                        <input class="operando" type="text">
+                        <label>Operando 2:</label>
+                        <input class="operando" type="text">
+                        <br><br>
+                        <input class="btn-operacion" data-op="+" type="button" value="+">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="-" type="button" value="-">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="*" type="button" value="*">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="/" type="button" value="/">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="entera" type="button" value="_.">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="decimal" type="button" value="._">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="raiz" type="button" value="&Sqrt;">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="log10" type="button" value="log(10)">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="loge" type="button" value="log(e)">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="logn" type="button" value="log(n)">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="aleatorio" type="button" value="🎲">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="aleatorio_rango" type="button" value="[🎲]">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="intercambiar" type="button" value="🔁">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="aleatorio_letraM" type="button"
+                            value="[A...Z]">&nbsp;&nbsp;
+                        <input class="btn-operacion" data-op="aleatorio_letram" type="button"
+                            value="[a...z]">&nbsp;&nbsp;
+                    </fieldset>
+                    <p><span id="texto"></span><strong id="resultado"></strong></p>
+                </div>
+                <div class="cardFooter"><a href="../../../index.html">&gt;&gt; Página principal</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>
