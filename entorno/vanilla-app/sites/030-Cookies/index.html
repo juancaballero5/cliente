@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="030f-Admin-usuarios" />
+	<title>020-DOM</title>
+	<link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+	<link rel="stylesheet" href="./css/styles.css" />
+	<script defer src="./js/auth.js"></script>
+	<script defer src="./js/menu.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-content">
+			<p class="header-title">Ejemplos – FUNDAMENTOS DE JS (ES6)</p>
+			<p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
+			<p class="header-tagline">Sesión – gestión de usuario con admin</p>
+		</div>
+		<div class="header-profile">
+			<img src="./img/user.png" alt="Foto de perfil" />
+		</div>
+	</header>
+	<nav>
+		<ul class="navbar">
+			<li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+			<li><a href="https://es.javascript.info/js">javascript.info</a></li>
+			<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+			<li class="dropdown enlacePrivado" style=" display: none;">
+				<a href="#" aria-haspopup="true">DOM</a>
+				<ul class="dropdown-content" aria-label="Submenú DOM">
+					<li><a href="./ejercicios/DOM/ejer01/index.html">getElementById()</a></li>
+					<li><a href="./ejercicios/DOM/ejer02/index.html">getElementsByClassName() / TagName()</a></li>
+					<li><a href="./ejercicios/DOM/ejer03/index.html">querySelector() / querySelectorAll()</a></li>
+					<li><a href="./ejercicios/DOM/ejer04/index.html">Content, innerText e innerHTML</a></li>
+					<li><a href="./ejercicios/DOM/ejer05/index.html">createElement() / append/removeChild()</a></li>
+					<li><a href="./ejercicios/DOM/ejer06/index.html">add/removeEventListener()</a></li>
+					<li><a href="./ejercicios/DOM/ejer07/index.html">ParentNodeChildSibling</a></li>
+				</ul>
+			</li>
+
+			<li class="dropdown enlacePrivado" style=" display: none;">
+				<a href="#" aria-haspopup="true">Cookies</a>
+				<ul class="dropdown-content" aria-label="Submenú Cookies">
+					<li><a href="./ejercicios/Cookies/ejer01/index.html">Mostrar/Ocultar y guardar datos</a></li>
+					<li><a href="./ejercicios/Cookies/ejer02/index.html">Escribir, borrar y leer cookie</a></li>
+				</ul>
+			</li>
+
+			<li class="derecha enlacePublico"><a href="./registro.html">Registro</a></li>
+			<li class="enlacePublico"><a href="./login.html">Login</a></li>
+
+			<li class="derecha enlacePrivado" id="usuarioSesion" style="display: none;"><a href="#" id="nombreUsuario"></a></li>
+			<li id="gestionUsuarios" class="enlaceAdmin" style="display: none;"><a href="./usuarios.html">Usuarios</a></li>
+			<li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section class="intro">
+			<h1>Bienvenido</h1>
+			<p>Selecciona un ejercicio desde el menú superior para empezar.</p>
+		</section>
+	</main>
+	<footer class="footer">© José García ☺</footer>
+</body>
+
+</html>

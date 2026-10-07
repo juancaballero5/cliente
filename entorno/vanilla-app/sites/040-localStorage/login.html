@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="La Plantilla en HTML5" />
+	<title>040-localStorage</title>
+	<link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+	<link rel="stylesheet" href="./css/styles.css" />
+	<link rel="stylesheet" href="./ejercicios/css/styles.css">
+	<script defer src="./js/auth.js"></script>
+	<script defer src="./js/login.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-content">
+			<p class="header-title">Ejemplos – FUNDAMENTOS DE JS (ES6)</p>
+			<p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
+			<p class="header-tagline">Login – formulario y cookie de cuenta</p>
+		</div>
+		<div class="header-profile">
+			<img src="./img/user.png" alt="Foto de perfil" />
+		</div>
+	</header>
+	<nav>
+		<ul class="navbar">
+			<li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+			<li><a href="https://es.javascript.info/js">javascript.info</a></li>
+			<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+			<li class="dropdown enlacePrivado" style=" display: none;">
+				<a href="#" aria-haspopup="true">DOM</a>
+				<ul class="dropdown-content" aria-label="Submenú DOM">
+					<li><a href="./ejercicios/DOM/ejer01/index.html">getElementById()</a></li>
+					<li><a href="./ejercicios/DOM/ejer02/index.html">getElementsByClassName() / TagName()</a></li>
+					<li><a href="./ejercicios/DOM/ejer03/index.html">querySelector() / querySelectorAll()</a></li>
+					<li><a href="./ejercicios/DOM/ejer04/index.html">Content, innerText e innerHTML</a></li>
+					<li><a href="./ejercicios/DOM/ejer05/index.html">createElement() / append/removeChild()</a></li>
+					<li><a href="./ejercicios/DOM/ejer06/index.html">add/removeEventListener()</a></li>
+					<li><a href="./ejercicios/DOM/ejer07/index.html">ParentNodeChildSibling</a></li>
+				</ul>
+			</li>
+			<li class="dropdown enlacePrivado" style=" display: none;">
+				<a href="#" aria-haspopup="true">Cookies</a>
+				<ul class="dropdown-content" aria-label="Submenú DOM">
+					<li><a href="./ejercicios/Cookies/ejer01/index.html">Mostrar/Ocultar y guardar datos</a></li>
+					<li><a href="./ejercicios/Cookies/ejer02/index.html">Escribir, borrar y leer cookie</a></li>
+				</ul>
+			</li>
+			<li class="derecha enlacePublico"><a href="./registro.html">Registro</a></li>
+
+			<li class="derecha enlacePrivado" id="usuarioSesion" style="display: none;"><a href="#" id="nombreUsuario"></a></li>
+			<li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
+
+		</ul>
+	</nav>
+	<main>
+		<div class="container">
+			<div class="card">
+				<h1 class="cardTitle">Login</h1>
+				<div class="cardBody">
+					<form id="formLogin">
+						<p>
+							<label for="usuario">Usuario:</label><br>
+							<input id="usuario" type="text" name="usuario" autocomplete="username" required>
+						</p>
+						<p>
+							<label for="password">Contraseña:</label><br>
+							<input id="password" type="password" name="password" autocomplete="new-password" required>
+						</p>
+						<p><button type="submit">Iniciar sesión</button>
+						</p>
+					</form>
+					<p id="mensaje"></p>
+				</div>
+				<div class="cardFooter">
+					<a href="./index.html">&gt;&gt; Página principal</a>
+				</div>
+			</div>
+		</div>
+	</main>
+     <footer class="footer">© Juan Caballero ☺</footer>
+</body>
+
+</html>

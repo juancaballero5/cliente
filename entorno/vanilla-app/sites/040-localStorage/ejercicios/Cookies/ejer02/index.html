@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="La Plantilla en HTML5" />
+	<title>030b-Cookies-escribir-leer-borrar</title>
+	<link rel="icon" type="image/x-icon" href="../../../img/favicon.ico" />
+	<link rel="stylesheet" href="../../../css/styles.css" />
+	<link rel="stylesheet" href="../../css/styles.css" />
+	<script defer src="../../../js/auth.js"></script>
+	<script defer src="../../../js/menu.js"></script>
+	<script defer src="./js/cookies.js"></script>
+	<script defer src="./js/script.js"></script>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-content">
+			<p class="header-title">Ejemplos – FUNDAMENTOS DE JS (ES6)</p>
+			<p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
+			<p class="header-tagline">Ejercicio 02 – Cookies – escribir, borrar y leer</p>
+		</div>
+		<div class="header-profile">
+			<img src="../../../img/user.png" alt="Foto de perfil" />
+		</div>
+	</header>
+	<nav>
+		<ul class="navbar">
+			<li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+			<li><a href="https://es.javascript.info/js">javascript.info</a></li>
+			<li><a href="https://developer.mozilla.org/es/docs/JavaScript">MDN</a></li>
+			<li class="dropdown enlacePrivado" style="display :none;">
+				<a href="#" aria-haspopup="true">DOM</a>
+				<ul class="dropdown-content" aria-label="Submenú DOM">
+					<li><a href="../../DOM/ejer01/index.html">getElementById()</a></li>
+					<li><a href="../../DOM/ejer02/index.html">getElementsByClassName() / TagName()</a></li>
+					<li><a href="../../DOM/ejer03/index.html">querySelector() / querySelectorAll()</a></li>
+					<li><a href="../../DOM/ejer04/index.html">Content, innerText e innerHTML</a></li>
+					<li><a href="../../DOM/ejer05/index.html">createElement() / append/removeChild()</a></li>
+					<li><a href="../../DOM/ejer06/index.html">add/removeEventListener()</a></li>
+					<li><a href="../../DOM/ejer07/index.html">ParentNodeChildSibling</a></li>
+				</ul>
+			</li>
+
+			<li class="dropdown enlacePrivado" style="display :none;">
+				<a href="#" aria-haspopup="true">Cookies</a>
+				<ul class="dropdown-content" aria-label="Submenú Cookies">
+					<li><a href="../ejer01/index.html">Mostrar/Ocultar y guardar datos</a></li>
+				</ul>
+			</li>
+
+			<li class="dropdown enlacePrivado" style="display :none;">
+				<a href="#" aria-haspopup="true">Storage</a>
+				<ul class="dropdown-content" aria-label="Submenú Storage">
+					<li><a href="../../Storage/ejer1/index.html">UIna clave por usuario</a></li>
+					<li><a href="../../Storage/ejer2/index.html">...</a></li>
+				</ul>
+			</li>
+
+			<li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;">
+				<a href="#" id="nombreUsuario"></a>
+			</li>
+			<li id="gestionUsuarios" class="enlaceAdmin" style="display: none;">
+				<a href="../../../usuarios.html">Usuarios</a>
+			</li>
+			<li class="enlacePrivado" id="cerrarSesion" style="display: none;">
+				<a href="#">Cerrar sesión</a>
+			</li>
+
+		</ul>
+	</nav>
+	<main>
+		<div class="container">
+			<div class="card">
+				<h1 class="cardTitle">Escribir, borrar y leer cookie</h1>
+				<div class="cardBody">
+					<p>Vamos a guardar, leer y borrar cookies.</p>
+					<p>
+						<label for="clave">Clave</label>
+						<input id="clave" type="text" placeholder="Introduce la clave">
+						<label for="valor">Valor</label>
+						<input id="valor" type="text" placeholder="Introduce el valor">
+					</p>
+					<p>
+						<button id="guardarCookieMaxAge" type="button">Guardar cookie (max-age)</button>
+						<button id="guardarCookieExpires" type="button">Guardar cookie (expires)</button>
+						<button id="guardarCookieNoCaduca" type="button">Guardar cookie (no caduca)</button>
+					</p>
+					<p>
+						<button id="leerCookies" type="button">Leer cookies</button>
+						<button id="leerCookie" type="button">Leer cookie</button>
+						<button id="borrarCookie" type="button">Borrar cookie</button>
+					</p>
+					<div id="resultado"></div>
+				</div>
+				<div class="cardFooter">
+					<a href="../../../index.html">&gt;&gt; Página principal</a>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">© José García ☺</footer>
+</body>
+
+</html>
