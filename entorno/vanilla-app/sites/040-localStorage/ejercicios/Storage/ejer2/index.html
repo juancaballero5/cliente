@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
      <meta charset="UTF-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <meta name="description" content="La Plantilla en HTML5" />
-     <title>040-Ejercicio 1</title>
+     <title>040 Ejercicio 2</title>
      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico" />
      <link rel="stylesheet" href="../../../css/styles.css" />
      <link rel="stylesheet" href="../../css/styles.css" />
@@ -20,7 +20,7 @@
           <div class="header-content">
                <p class="header-title">Ejemplos – FUNDAMENTOS DE JS (ES6)</p>
                <p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
-               <p class="header-tagline">Ejercicio 01 – Storage – una clave por usuario</p>
+               <p class="header-tagline">Ejercicio 02 – Storage – una clave 'usuarios'</p>
           </div>
           <div class="header-profile">
                <img src="../../../img/user.png" alt="Foto de perfil" />
@@ -55,7 +55,7 @@
                <li class="dropdown enlacePrivado" style="display :none;">
                     <a href="#" aria-haspopup="true">Storage</a>
                     <ul class="dropdown-content" aria-label="Submenú Storage">
-                         <li><a href="../ejer2/index.html">Una clave 'usuarios'</a></li>
+                         <li><a href="../ejer1/index.html">Un valor por usuario</a></li>
                          <li><a href="../ejer3/index.html">Imagen | FileReader</a></li>
                     </ul>
                </li>
@@ -75,9 +75,9 @@
      <main>
           <div class="container">
                <div class="card">
-                    <h1 class="cardTitle">Una clave por usuario</h1>
+                    <h1 class="cardTitle">Una clave para todos los usuario</h1>
                     <div class="cardBody">
-                         <p>Guardamos en <code>localStorage</code> cada cuenta por separado.</p>
+                         <p>Guardamos en <code>localStorage</code> una cuenta 'usuarios'.</p>
                          <p>Clave: nombre de usuario; valor: objeto de la cuenta en JSON.</p>
                          <form id="formulario" action="#">
                               <p>
@@ -95,6 +95,10 @@
                               <p>
                                    <label for="telefono">Telefono</label>
                                    <input id="telefono" type="text" placeholder="Opcional (9 dígitos)">
+                              </p>
+                              <p>
+                                   <label for="email">Email</label>
+                                   <input id="email" type="text" placeholder="Opcional (9 dígitos)">
                               </p>
                               <p>
                                    <button id="guardar" type="button">Guardar</button>

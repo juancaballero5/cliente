@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
      <meta charset="UTF-8" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <meta name="description" content="La Plantilla en HTML5" />
-     <title>040-Ejercicio 1</title>
+     <title>040 Ejercicio 3</title>
      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico" />
      <link rel="stylesheet" href="../../../css/styles.css" />
      <link rel="stylesheet" href="../../css/styles.css" />
@@ -20,7 +20,7 @@
           <div class="header-content">
                <p class="header-title">Ejemplos – FUNDAMENTOS DE JS (ES6)</p>
                <p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
-               <p class="header-tagline">Ejercicio 01 – Storage – una clave por usuario</p>
+               <p class="header-tagline">Ejercicio 03 – Storage – una clave por usuario</p>
           </div>
           <div class="header-profile">
                <img src="../../../img/user.png" alt="Foto de perfil" />
@@ -55,8 +55,8 @@
                <li class="dropdown enlacePrivado" style="display :none;">
                     <a href="#" aria-haspopup="true">Storage</a>
                     <ul class="dropdown-content" aria-label="Submenú Storage">
+                         <li><a href="../ejer1/index.html">Un valor por usuario</a></li>
                          <li><a href="../ejer2/index.html">Una clave 'usuarios'</a></li>
-                         <li><a href="../ejer3/index.html">Imagen | FileReader</a></li>
                     </ul>
                </li>
 
@@ -75,39 +75,30 @@
      <main>
           <div class="container">
                <div class="card">
-                    <h1 class="cardTitle">Una clave por usuario</h1>
+                    <h1 class="cardTitle">Guardar una imagen en Storage</h1>
                     <div class="cardBody">
-                         <p>Guardamos en <code>localStorage</code> cada cuenta por separado.</p>
-                         <p>Clave: nombre de usuario; valor: objeto de la cuenta en JSON.</p>
-                         <form id="formulario" action="#">
-                              <p>
-                                   <label for="nombre">Nombre</label>
-                                   <input id="nombre" type="text" autocomplete="name" placeholder="Nombre real">
-                              </p>
-                              <p>
-                                   <label for="usuario">Usuario</label>
-                                   <input id="usuario" type="text" autocomplete="username" placeholder="Nombre de usuario">
-                              </p>
-                              <p>
-                                   <label for="password">Contraseña</label>
-                                   <input id="password" type="password" autocomplete="new-password" placeholder="Contraseña">
-                              </p>
-                              <p>
-                                   <label for="telefono">Telefono</label>
-                                   <input id="telefono" type="text" placeholder="Opcional (9 dígitos)">
-                              </p>
-                              <p>
-                                   <button id="guardar" type="button">Guardar</button>
-                                   <button id="leer" type="button">Leer</button>
-                                   <button id="borrar" type="button">Borrar</button>
-                              </p>
-                         </form>
+                         <p>Probamos cuatro formas de guardar una imagen en <code>localStorage</code>.</p>
+                         <p>Clave: <code>fotoUsuario</code>; valor: solo el intento 4 persiste tras recargar.</p>
+                         <p>
+                              <label for="image">Imagen</label>
+                              <input id="image" type="file" accept="image/*">
+                         </p>
+                         <p>
+                              <button id="tryIt1" type="button">Intento 1</button>
+                              <button id="tryIt2" type="button">Intento 2</button>
+                              <button id="tryIt3" type="button">Intento 3</button>
+                              <button id="tryIt4" type="button">Intento 4</button>
+                         </p>
                          <div id="resultado"></div>
                     </div>
                     <div class="cardFooter">
-                         <a href="../../index.html">&gt;&gt; Página principal</a>
+                         <a href="../../../index.html">&gt;&gt; Página principal</a>
                     </div>
                </div>
+               <div class="cardFooter">
+                    <a href="../../index.html">&gt;&gt; Página principal</a>
+               </div>
+          </div>
           </div>
      </main>
      <footer class="footer">© Juan Caballero ☺</footer>
