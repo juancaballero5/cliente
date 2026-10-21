@@ -1,9 +1,7 @@
-"use strict"
+"use strict";
 
 const formRegistro = document.getElementById("formRegistro");
 const mensaje = document.getElementById("mensaje");
-
-const CLAVES_RESERVADAS = ["usuario", "loggedIn"];
 
 formRegistro.addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -11,17 +9,16 @@ formRegistro.addEventListener("submit", (e) => {
 	const usuario = document.getElementById("usuario").value.trim();
 	const password = document.getElementById("password").value.trim();
 
-	if (CLAVES_RESERVADAS.includes(usuario)) {
-		mensaje.textContent = `No puedes registrarte con el nombre "${usuario}" (está reservado).`;
+	if (usuario === "" || password === "") {
+		mensaje.textContent = "Rellena usuario y contraseña.";
 		return;
 	}
 
-	if (getCookie(usuario) != null) {
-		mensaje.textContent = `El usuario "${usuario}" ya está registrado.`;
+	if (leeCuenta(usuario) !== null) {
+		mensaje.textContent = `El usuario "${usuario}" ya está registrado. No se ha guardado nada, porque guardar otra vez sustituiría su ficha.`;
 		return;
 	}
 
-	setCookie(`${usuario}=${password}; path=/; secure; samesite=Strict`);
+	guardaCuenta({ usuario: usuario, password: password });
 	mensaje.textContent = `Usuario "${usuario}" registrado correctamente.`;
-
 });

@@ -21,7 +21,7 @@ formulario.addEventListener("submit", (e) => {
      e.preventDefault();
 });
 
-// resultado.innerHTML = leerTodo();
+// resultado.innerHTML = leeTodo(ALMACEN_LOCALSTORAGE);
 
 guardar.addEventListener("click", () => {
      const nombreInput = nombre.value.trim();
@@ -34,7 +34,6 @@ guardar.addEventListener("click", () => {
           resultado.textContent = "Usuario no válido (minúsculas, números o _; 3-16 caracteres; empieza por letra).";
           return;
      }
-     resultado.textContent = "CORRECTO";
 
      if (!PATRON_PASSWORD.test(passwordInput)) {
           resultado.textContent = "Contraseña no válida (entre 4 y 20 caracteres).";
@@ -43,10 +42,12 @@ guardar.addEventListener("click", () => {
 
      if (telefonoInput && !PATRON_TELEFONO.test(telefonoInput)) {
           resultado.textContent= "Telefono no válido (9 dígitos)";
+          return;
      }
 
      if (emailInput && !PATRON_EMAIL.test(emailInput)) {
           resultado.textContent= "Telefono no válido (9 dígitos)";
+          return;
      }
 
      const user = {
@@ -57,19 +58,19 @@ guardar.addEventListener("click", () => {
           email: emailInput || "sin-email",
      };
 
-     guardartodo(user, ALMACEN_LOCALSTORAGE);
-     resultado.innerHTML= leerTodo(ALMACEN_LOCALSTORAGE);
+     guarda(user, ALMACEN_LOCALSTORAGE);
+     resultado.innerHTML= leeTodo(ALMACEN_LOCALSTORAGE);
 
 });
 
 leer.addEventListener("click", () => {
      const clave = usuario.value.trim();
-     const  valor = leerValorClave(clave);
-     resultado.innerHTML = `<b>${valor.nombre}</b> Usuario: ${valor.usuario} - Contraseña: ${valor.password} - Telefono: ${valor.telefono}`;
+     const  valor = leeClave(clave,ALMACEN_LOCALSTORAGE);
+     resultado.innerHTML = valor;
 });
 
 borrar.addEventListener("click", () => {
      const clave = usuario.value.trim();
-     borrarClave(clave,ALMACEN_LOCALSTORAGE);
-     resultado.innerHTML = leerTodo(ALMACEN_LOCALSTORAGE);
+     resultado.innerHTML =borra(clave,ALMACEN_LOCALSTORAGE);
+     resultado.innerHTML += `<br>` +  leeTodo(ALMACEN_LOCALSTORAGE);
 });
