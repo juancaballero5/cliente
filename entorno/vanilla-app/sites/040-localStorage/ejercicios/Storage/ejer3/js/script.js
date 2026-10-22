@@ -1,90 +1,84 @@
-"use strict";
+"use strict" ;
 
-const image = document.getElementById("image");
 const tryIt1 = document.getElementById("tryIt1");
 const tryIt2 = document.getElementById("tryIt2");
 const tryIt3 = document.getElementById("tryIt3");
 const tryIt4 = document.getElementById("tryIt4");
 const resultado = document.getElementById("resultado");
+const image = document.getElementById("image");
 
-tryIt1.addEventListener("click", () =>{
+// Intento 1 (FALLIDO)
+tryIt1.addEventListener("click", () => {
 
-     resultado.innerHTML= "";
-     localStorage.removeItem("fotoUsuario");
+     // Limpiamos el html y el localStorage
+     resultado.innerHTML = "";
+     localStorage.removeItem("imagen");
 
-     console.log(image.value.trim());
-     const ruta = image.value.trim();
-     localStorage.setItem("fotoUsuario",ruta);
-     const recuperaImagen = localStorage.getItem("fotoUsuario");
+     const ruta = image.ariaValueMax.trim();
+     localStorage.setItem("imagen", ruta);
 
-     const img = document.createElement("img");
+     // Recuperamos la ruta del localStorage y creamos la imagen
+     const rutaImagen = localStorage.getItem("imagen");
+     const imagen = document.createElement("img");
 
-     img.src = recuperaImagen;
-     img.width = 120;
+     // Le damos los atributos a imagen
+     imagen.src = rutaImagen ;
+     imagen.width = 120;
 
-     resultado.innerHTML = `<p>Guardada la ruta: ${ruta}</p>`;
-     resultado.appendChild(img);
+     // Muestro el mensaje con la ruta dada y la recuperada y insertamos la imagen
+     resultado.innerHTML = `<p>Se ha guardado la ruta: ${ruta}, y se ha recuperado la ruta: ${rutaImagen}`;
+     resultado.appendChild(imagen);
 });
 
 tryIt2.addEventListener("click", () => {
-     resultado.innerHTML= "";
-     localStorage.removeItem("fotoUsuario");
+     // Limpiamos el html y el localStorage
+     resultado.innerHTML = "";
+     localStorage.removeItem("imagen");
 
-     const archivo = image.file[0];
-     localStorage.setItem("fotoUsuario", archivo);
-     const recuperaImagen = localStorage.getItem("fotoUsuario");
+     const ruta = image.ariaValueMax.trim();
+     localStorage.setItem("imagen", ruta);
 
-     const img = document.createElement("img");
+     // Recuperamos la ruta del localStorage y creamos la imagen
+     const rutaImagen = localStorage.getItem("imagen");
+     const imagen = document.createElement("img");
 
-     img.src = recuperaImagen;
-     img.width = 120;
+     // Le damos los atributos a imagen
+     imagen.src = rutaImagen ;
+     imagen.width = 120;
 
-     resultado.innerHTML = `<p>Guardado el archivo: ${archivo}</p>`;
-     resultado.appendChild(img);
+     // Muestro el mensaje con la ruta dada y la recuperada y insertamos la imagen
+     resultado.innerHTML = `<p>Se ha guardado la ruta: ${ruta}, y se ha recuperado la ruta: ${rutaImagen}`;
+     resultado.appendChild(imagen);
 });
+
+function mostrarImagen() {
+     const rutaTemporalImagen = localStorage.getItem("imagen");
+     const archivo = image.files[0];
+     const urlTemporal = URL.createObjectURL(archivo);
+     localStorage.setItem("imagen", urlTemporal);
+
+     const imagen = document.createElement("img");
+     imagen.src = rutaTemporalImagen;
+     imagen.width = 120;
+
+     resultado.innerHTML = `<p>Se ha guardado la ruta temporal: ${urlTemporal}, y se ha recuperado el archivo : ${rutaTemporalImagen}<p>`;
+     resultado.appendChild(imagen);
+}
 
 tryIt3.addEventListener("click", () => {
-     resultado.innerHTML= "";
-     localStorage.removeItem("fotoUsuario");
+     resultado.innerHTML = ``;
+     localStorage.removeItem("imagen");
 
-     const archivo = image.file[0];
+     const archivo = image.files[0];
      const urlTemporal = URL.createObjectURL(archivo);
-     localStorage.setItem("fotoUsuario", archivo);
-     const recuperaImagen = localStorage.getItem("fotoUsuario");
+     localStorage.setItem("imagen", urlTemporal);
 
-     const img = document.createElement("img");
+     const rutaTemporalImagen = localStorage.getItem("imagen");
+     
+     const imagen = document.createElement("img");
+     imagen.src = rutaTemporalImagen;
+     imagen.width = 120;
 
-     img.src = recuperaImagen;
-     img.width = 120;
-
-     resultado.innerHTML = `<p>Guardada la ruta: ${urlTemporal}</p>`;
-     resultado.appendChild(img);
+     resultado.innerHTML = `<p>Se ha guardado la ruta temporal: ${urlTemporal}, y se ha recuperado el archivo : ${rutaTemporalImagen}<p>`;
+     resultado.appendChild(imagen);
 });
-
-tryIt3.addEventListener("click", async () => {
-     resultado.innerHTML= "";
-     localStorage.removeItem("fotoUsuario");
-
-     const archivo = image.file[0];
-     const dataURL = await fileToDataURL(archivo);
-
-     localStorage.setItem("fotoUsuario", dataURL);
-     const recuperaImagen = localStorage.getItem("fotoUsuario");
-
-     const img = document.createElement("img");
-
-     img.src = recuperaImagen;
-     img.width = 120;
-
-     resultado.innerHTML = `<p>Guardada la ruta: ${dataURL}</p>`;
-     resultado.appendChild(img);
-});
-
-function fileToDataURL(file) {
-     return new Promise((resolve, reject) => {
-          const lector = new FileReader();
-          lector.onload = () => resolve(lector.result);
-          lector.onerror = () => reject("Error al leer el archivo");
-          lector.readAsDataURL(file);
-     })
-}
