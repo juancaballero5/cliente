@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Usuarios con imagen Base64">
-    <title>ejer04</title>
+    <title>Ejercicio 1 IndexedDB</title>
     <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
     <link rel="stylesheet" href="../../../css/styles.css">
     <link rel="stylesheet" href="../../css/styles.css">
-    <script defer src="./js/localStorage.js"></script>
+    <script defer src="./js/indexedDB.js"></script>
     <script defer src="./js/script.js"></script>
     <script defer src="../../../js/auth.js"></script>
     <script defer src="../../../js/menu.js"></script>
@@ -33,6 +33,7 @@
             <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
             <li><a href="https://es.javascript.info/js">javascript.info</a></li>
             <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
             <li class="dropdown enlacePrivado" style="display: none;">
                 <a href="#" aria-haspopup="true">DOM</a>
                 <ul class="dropdown-content" aria-label="Submenú DOM">
@@ -45,6 +46,7 @@
                     <li><a href="../../DOM/ejer07/index.html">Padre, hijos y hermanos</a></li>
                 </ul>
             </li>
+            
             <li class="dropdown enlacePrivado" style="display: none;">
                 <a href="#" aria-haspopup="true">Cookies</a>
                 <ul class="dropdown-content" aria-label="Submenú Cookies">
@@ -52,6 +54,7 @@
                     <li><a href="../../Cookies/ejer02/index.html">Escribir, leer y borrar</a></li>
                 </ul>
             </li>
+
             <li class="dropdown enlacePrivado" style="display: none;">
                 <a href="#" aria-haspopup="true">Storage</a>
                 <ul class="dropdown-content" aria-label="Submenú Storage">
@@ -61,12 +64,18 @@
                     <li><a href="../../Storage/ejer4/index.html">Usuarios con imagen Base64</a></li>
                 </ul>
             </li>
+
+            <li class="dropdown enlacePrivado" style="display: none;">
+                <a href="#" aria-haspopup="true">IndexedDB</a>
+                <ul class="dropdown-content" aria-label="Submenú IndexedDB">
+                    <li><a href="../ejer2/index.html">Usuario desde la API</a></li>
+                </ul>
+            </li>
+
             <li class="enlacePublico derecha"><a href="../../../registro.html">Registro</a></li>
             <li class="enlacePublico"><a href="../../../login.html">Login</a></li>
-            <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;"><a href="#"
-                    id="nombreUsuario"></a></li>
-            <li id="gestionUsuarios" class="enlaceAdmin" style="display: none;"><a
-                    href="../../../usuarios.html">Usuarios</a></li>
+            <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;"><a href="#" id="nombreUsuario"></a></li>
+            <li id="gestionUsuarios" class="enlaceAdmin" style="display: none;"><a href="../../../usuarios.html">Usuarios</a></li>
             <li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
         </ul>
     </nav>
@@ -74,11 +83,12 @@
     <main>
         <div class="container">
             <div class="card">
-                <h1 class="cardTitle">Usuarios con imagen Base64</h1>
+                <h1 class="cardTitle">Usuarios e imagen Blob</h1>
                 <div class="cardBody">
-                    <p>Guardamos en <code>localStorage</code> todas las cuentas juntas.</p>
-                    <p>Clave: <code>usuarios</code>; valor: objeto con todas las cuentas en JSON.</p>
-                    <p>Cada cuenta añade la dirección y la imagen en Base64.</p>
+                    <form id="formulario" action="#">
+                    <p>Guardamos cada cuenta en IndexedDB.</p>
+                    <p>Almacén <code>usuarios</code>; clave primaria: el campo <code>usuario</code>.</p>
+                    <p>Cada cuenta añade la dirección. La foto es un <code>Blob</code>, no texto Base64.</p>
                     <p>
                         <label for="nombre">Nombre</label>
                         <input id="nombre" type="text" autocomplete="name" placeholder="Nombre real">
@@ -105,7 +115,7 @@
                     </p>
                     <p>
                         <label for="cp">Código postal</label>
-                        <input id="cp" type="text" inputmode="numeric" placeholder="Opcional (5 dígitos)">
+                        <input id="cp" type="text" inputmode="numeric" placeholder="Opcional">
                     </p>
                     <p>
                         <label for="ciudad">Ciudad</label>
@@ -123,7 +133,9 @@
                         <button id="guardar" type="button">Guardar</button>
                         <button id="leer" type="button">Leer</button>
                         <button id="borrar" type="button">Borrar</button>
+                        <button id="esperar" type="button">Simular espera (10 s)</button>
                     </p>
+                    <p>El boton de espera no bloquea la página: puedes seguir escribiendo y guaradar mientras cuenta.</p>
                     <div id="resultado"></div>
                 </div>
                 <div class="cardFooter">
@@ -134,7 +146,7 @@
     </main>
 
     <footer class="footer">
-        © José García ☺
+        © Juan Caballero ☺
     </footer>
 </body>
 

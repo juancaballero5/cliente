@@ -1,24 +1,83 @@
 "use strict";
 
-const formRegistro = document.getElementById("formRegistro");
-const mensaje = document.getElementById("mensaje");
+const PATRON_USUARIO = /^[a-z][a-z0-9_]{2,15}$/;
+const PATRON_PASSWORD = /^.{4,20}$/;
+const PATRON_TELEFONO = /^[5-9]\d{8,9}$/;
+const PATRON_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PATRON_CP = /^\d{5}$/;
 
-formRegistro.addEventListener("submit", (e) => {
+const formulario = document.getElementById("formRegistro");
+const mensaje = document.getElementById("mensaje");
+const nombre = document.getElementById("nombre");
+const usuario = document.getElementById("usuario");
+const password = document.getElementById("password");
+const telefono = document.getElementById("telefono");
+const email = document.getElementById("email");
+const calle = document.getElementById("calle");
+const cp = document.getElementById("cp");
+const ciudad = document.getElementById("ciudad");
+const provincia = document.getElementById("provincia");
+const imagen = document.getElementById("imagen");
+
+formulario.addEventListener("submit", async (e) => {
 	e.preventDefault();
 
-	const usuario = document.getElementById("usuario").value.trim();
-	const password = document.getElementById("password").value.trim();
+	const textoUsuario = usuario.value.trim();
 
-	if (usuario === "" || password === "") {
-		mensaje.textContent = "Rellena usuario y contraseña.";
+	if (!PATRON_USUARIO.test(textoUsuario)) {
+		mensaje.textContent =
+			"Usuario no válido (minúsculas, números o _; 3-16 caracteres; empieza por letra).";
 		return;
 	}
 
-	if (leeCuenta(usuario) !== null) {
-		mensaje.textContent = `El usuario "${usuario}" ya está registrado. No se ha guardado nada, porque guardar otra vez sustituiría su ficha.`;
+	if (!PATRON_PASSWORD.test(password.value.trim())) {
+		mensaje.textContent = "Contraseña no válida (entre 4 y 20 caracteres).";
 		return;
 	}
 
-	guardaCuenta({ usuario: usuario, password: password });
-	mensaje.textContent = `Usuario "${usuario}" registrado correctamente.`;
+	if (leeUsuarioStorage(usuario.value.trim())) {
+		mensaje.textContent = `El usuario "${usuario.value.trim()}" ya está registrado.`;
+		return;
+	}
+
+	if (telefono.value.trim() && !PATRON_TELEFONO.test(telefono.value.trim())) {
+		mensaje.textContent = "Teléfono no válido (9 dígitos; empieza por 6-9).";
+		return;
+	}
+
+	if (email.value.trim() && !PATRON_EMAIL.test(email.value.trim())) {
+		mensaje.textContent = "Email no válido.";
+		return;
+	}
+
+	if (cp.value.trim() && !PATRON_CP.test(cp.value.trim())) {
+		mensaje.textContent = "Código postal no válido (5 dígitos).";
+		return;
+	}
+
+	if (await leeUsuarioDB(textoUsuario)) {
+		mensaje.textContent = `El usuario "${textoUsuario}" ya existe.`;
+		return;
+	}
+
+	const dataURL = imagen.files[0] || FOTO_DEFECTO;
+
+	const user = {
+		nombre: nombre.value.trim(),
+		usuario: usuario.value.trim(),
+		password: password.value.trim(),
+		telefono: telefono.value.trim() || "5551234567",
+		email: email.value.trim() || "sin-email@ejemplo.com",
+		direccion: {
+			calle: calle.value.trim() || "Sin calle",
+			cp: cp.value.trim() || "00000",
+			ciudad: ciudad.value.trim() || "Sin ciudad",
+			provincia: provincia.value.trim() || "Sin provincia",
+		},
+		imagen: dataURL,
+	};
+
+	await guardaUsuarioDB(user);
+
+	mensaje.textContent = `Usuario "${user.usuario}" registrado correctamente.`;
 });

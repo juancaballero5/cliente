@@ -11,10 +11,11 @@
         <script defer src="./js/script.js"></script>
         <script defer src="../../../js/auth.js"></script>
         <script defer src="../../../js/menu.js"></script>
+        <script defer src="../../../js/rutas.js"></script>
     </head>
 
-    <body>
-        <header>
+    <body class="paginaPrivada">
+        <header class="header">
             <div class="header-content">
                 <p class="header-title">Ejemplos – FUNDAMENTOS DE JS (ES6)</p>
                 <p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
@@ -60,15 +61,20 @@
                     </ul>
                 </li>
 
-                <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;">
-                    <a href="#" id="nombreUsuario"></a>
+                <li class="dropdown enlacePrivado" style="display :none;">
+                    <a href="#" aria-haspopup="true">IndexedDB</a>
+                    <ul class="dropdown-content" aria-label="Submenú IndexedDB">
+                        <li><a href="../../IndexedDB/ejer1/index.html">Usuario e imagen Blob</a></li>
+                        <li><a href="../../IndexedDB/ejer2/index.html">Usuario desde la API</a></li>
+                    </ul>
                 </li>
-                <li id="gestionUsuarios" class="enlaceAdmin" style="display: none;">
-                    <a href="../../../usuarios.html">Usuarios</a>
-                </li>
-                <li class="enlacePrivado" id="cerrarSesion" style="display: none;">
-                    <a href="#">Cerrar sesión</a>
-                </li>
+
+
+                <li class="enlacePublico derecha"><a href="../../../registro.html">Registro</a></li>
+                <li class="enlacePublico"><a href="../../../login.html">Login</a></li>
+                <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;"><a href="#" id="nombreUsuario"></a></li>
+                <li id="gestionUsuarios" class="enlaceAdmin" style="display: none;"><a href="../../../usuarios.html">Usuarios</a></li>
+                <li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
                 
             </ul>
         </nav>

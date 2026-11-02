@@ -5,8 +5,8 @@ const PATRON_PASSWORD = /^.{4,20}$/;
 const PATRON_TELEFONO = /^[6-9]\d{8}$/;
 const PATRON_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PATRON_CP = /^\d{5}$/;
-const FOTO_DEFECTO = "/040-Registro+Login-localStorage/040g-Rutas+ExtraUsuarios/img/user.png";
 
+const formulario = document.getElementById("formulario");
 const nombre = document.getElementById("nombre");
 const usuario = document.getElementById("usuario");
 const password = document.getElementById("password");
@@ -21,12 +21,97 @@ const guardar = document.getElementById("guardar");
 const leer = document.getElementById("leer");
 const borrar = document.getElementById("borrar");
 const resultado = document.getElementById("resultado");
+const esperar = document.getElementById("esperar");
 
-abrirBaseDatos();
-const user = {
-          nombre: "Jhon",
+formulario.addEventListener("submit", (event) => {
+     event.preventDefault();
+});
+
+listarUsuarios();
+
+guardar.addEventListener("click", async () => {
+     if (!PATRON_USUARIO.test(usuario.value.trim())) {
+          resultado.textContent =
+               "Usuario no válido (minúsculas, números o _; 3-16 caracteres; empieza por letra).";
+          return;
+     }
+
+     if (!PATRON_PASSWORD.test(password.value.trim())) {
+          resultado.textContent = "Contraseña no válida (entre 4 y 20 caracteres).";
+          return;
+     }
+
+     if (telefono.value.trim() && !PATRON_TELEFONO.test(telefono.value.trim())) {
+          resultado.textContent = "Teléfono no válido (9 dígitos; empieza por 6-9).";
+          return;
+     }
+
+     if (email.value.trim() && !PATRON_EMAIL.test(email.value.trim())) {
+          resultado.textContent = "Email no válido.";
+          return;
+     }
+
+     if (cp.value.trim() && !PATRON_CP.test(cp.value.trim())) {
+          resultado.textContent = "Código postal no válido (5 dígitos).";
+          return;
+     }
+
+     const user = {
+          nombre: nombre.value.trim(),
+          usuario: usuario.value.trim(),
+          password: password.value.trim(),
+          telefono: telefono.value.trim() || "5551234567",
+          email: email.value.trim() || "sin-email@ejemplo.com",
+          direccion: {
+               calle: calle.value.trim() || "Sin calle",
+               cp: cp.value.trim() || "00000",
+               ciudad: ciudad.value.trim() || "Sin ciudad",
+               provincia: provincia.value.trim() || "Sin provincia",
+          },
+          imagen: imagen.files[0] ? imagen.files[0] : FOTO_DEFECTO,
+     };
+
+     await guardaUsuarioEjercicio(user);
+     listarUsuarios();
+});
+
+leer.addEventListener("click", async () => {
+     let mensaje = "📦 El valor del usuario es:<br>";
+     const user = await leeUsuarioEjercicio(usuario.value.trim());
+     if (!user) {
+          resultado.innerHTML = mensaje + "⚠️ No existe el usuario.";
+     } else {
+          const src = typeof user.imagen === "string" ? user.imagen : URL.createObjectURL(user.imagen);
+          const foto = `<img src="${src}" alt="${user.usuario}">`;
+          resultado.innerHTML = mensaje + `${foto} <b>${user.nombre}</b> ${user.usuario} - ${user.telefono} - ${user.email} - ${user.direccion.calle} - ${user.direccion.cp} - ${user.direccion.ciudad} - ${user.direccion.provincia}<br>`;
+     }
+     setTimeout(() => {
+          listarUsuarios();
+     }, 1500);
+});
+
+borrar.addEventListener("click", async () => {
+     const user = await leeUsuarioEjercicio(usuario.value.trim());
+     if (!user) {
+          resultado.innerHTML = "⚠️ No existe el usuario.";
+     } else {
+          await borraUsuarioEjercicio(user.usuario);
+          resultado.innerHTML = `El usuario <b>${user.usuario}</b> ha sido borrado.`;
+     }
+     setTimeout(() => {
+          listarUsuarios();
+     }, 1500);
+});
+
+esperar.addEventListener("click", async () => {
+     await new Promise((resolve) => {
+          setTimeout(resolve, 10000);
+     });
+
+     await guardaUsuarioEjercicio({
+          nombre: "John",
           usuario: "doe",
-          password: "pass",
+          password: "dejameya",
           telefono: "5551234567",
           email: "sin-email@ejemplo.com",
           direccion: {
@@ -36,115 +121,20 @@ const user = {
                provincia: "Sin provincia",
           },
           imagen: FOTO_DEFECTO,
-}
-guardaUsuario(user);
-
-// listarUsuarios();
-
-// guardar.addEventListener("click", async () => {
-//      const nombreValor = nombre.value.trim();
-//      const usuarioValor = usuario.value.trim();
-//      const passwordValor = password.value.trim();
-//      const telefonoValor = telefono.value.trim();
-//      const emailValor = email.value.trim();
-//      const calleValor = calle.value.trim();
-//      const cpValor = cp.value.trim();
-//      const ciudadValor = ciudad.value.trim();
-//      const provinciaValor = provincia.value.trim();
-//      const archivo = imagen.files[0];
-
-//      if (!PATRON_USUARIO.test(usuarioValor)) {
-//           resultado.textContent =
-//                "Usuario no válido (minúsculas, números o _; 3-16 caracteres; empieza por letra).";
-//           return;
-//      }
-
-//      if (!PATRON_PASSWORD.test(passwordValor)) {
-//           resultado.textContent = "Contraseña no válida (entre 4 y 20 caracteres).";
-//           return;
-//      }
-
-//      if (telefonoValor && !PATRON_TELEFONO.test(telefonoValor)) {
-//           resultado.textContent = "Teléfono no válido (9 dígitos; empieza por 6-9).";
-//           return;
-//      }
-
-//      if (emailValor && !PATRON_EMAIL.test(emailValor)) {
-//           resultado.textContent = "Email no válido.";
-//           return;
-//      }
-
-//      if (cpValor && !PATRON_CP.test(cpValor)) {
-//           resultado.textContent = "Código postal no válido (5 dígitos).";
-//           return;
-//      }
-
-//      const dataURL = archivo ? await fileToDataURL(archivo) : FOTO_DEFECTO;
-
-//      const user = {
-//           nombre: nombreValor,
-//           usuario: usuarioValor,
-//           password: passwordValor,
-//           telefono: telefonoValor || "5551234567",
-//           email: emailValor || "sin-email@ejemplo.com",
-//           direccion: {
-//                calle: calleValor || "Sin calle",
-//                cp: cpValor || "00000",
-//                ciudad: ciudadValor || "Sin ciudad",
-//                provincia: provinciaValor || "Sin provincia",
-//           },
-//           imagen: dataURL,
-//      };
-
-//      guardaUsuario(user);
-//      listarUsuarios();
-// });
-
-// leer.addEventListener("click", () => {
-//      const clave = usuario.value.trim();
-//      if (!clave) {
-//           resultado.textContent = "Escribe el usuario que quieres leer.";
-//      } else {
-//           const user = leeUsuario(clave);
-//           if (user) {
-//                const foto = user.imagen ? `<img src="${user.imagen}" alt=""> ` : "";
-//                resultado.innerHTML =
-//                     `${foto}<b>${user.nombre}</b> ${user.usuario} - ${user.telefono} - ${user.email} - ${user.direccion.calle} - ${user.direccion.cp} - ${user.direccion.ciudad} - ${user.direccion.provincia}<br>`;
-//           } else {
-//                resultado.textContent = "No existe ese usuario.";
-//           }
-//      }
-//      setTimeout(() => {
-//           listarUsuarios();
-//      }, 1500);
-// });
-
-// borrar.addEventListener("click", () => {
-//      const clave = usuario.value.trim();
-//      if (!clave) {
-//           resultado.textContent = "Escribe el usuario que quieres borrar.";
-//      } else {
-//           const user = borraUsuario(clave);
-//           if (user) {
-//                resultado.innerHTML = `Usuario "<b>${user.usuario}</b>" borrado.`;
-//           } else {
-//                resultado.textContent = "No existe ese usuario.";
-//           }
-//      }
-//      setTimeout(() => {
-//           listarUsuarios();
-//      }, 1500);
-// });
+     });
+     listarUsuarios();
+});
 
 async function listarUsuarios() {
-     let listado = "Usuarios guardados (1 clave = todos):<br>";
-     const usuarios = Object.values(await leeUsuariosId());
+     let listado = "Usuarios guardados (almacén usuarios):<br>";
+     const usuarios = await leeUsuariosEjercicio();
      if (usuarios.length === 0) {
           resultado.innerHTML = listado + "No hay usuarios guardados.";
      } else {
           usuarios.forEach((user) => {
-               const foto = user.imagen ? `<img src="${user.imagen}" alt=""> ` : "";
-               listado += `${foto}<b>${user.nombre}</b> ${user.usuario} - ${user.telefono} - ${user.email} - ${user.direccion.calle} - ${user.direccion.cp} - ${user.direccion.ciudad} - ${user.direccion.provincia}<br>`;
+               const src = typeof user.imagen === "string" ? user.imagen : URL.createObjectURL(user.imagen);
+               const foto = `<img src="${src}" alt="${user.usuario}">`;
+               listado += `${foto} <b>${user.nombre}</b> ${user.usuario} - ${user.telefono} - ${user.email} - ${user.direccion.calle} - ${user.direccion.cp} - ${user.direccion.ciudad} - ${user.direccion.provincia}<br>`;
           });
           resultado.innerHTML = listado;
      }
