@@ -18,7 +18,7 @@ formLogin.addEventListener("submit", async (e) => {
 	const usuario = document.getElementById("usuario").value.trim();
 	const password = document.getElementById("password").value.trim();
 	
-	if (await (!loginCorrecto(usuario, password))) {
+	if (!(await loginCorrecto(usuario, password))) {
 		mensaje.textContent = `Usuario o contraseña incorrecta.`;
 		return;
 	}
@@ -26,7 +26,7 @@ formLogin.addEventListener("submit", async (e) => {
 	const ficha = await leeUsuarioDB(usuario);
 	await guardaSesionDB(ficha);
 
-	mensaje.textContent = `Bienvenido, ${ficha}. Redirigiendo...`;
+	mensaje.textContent = `Bienvenido, ${usuario}. Redirigiendo...`;
 	setTimeout(() => {
 		window.location.href = "index.html";
 	}, 1500);

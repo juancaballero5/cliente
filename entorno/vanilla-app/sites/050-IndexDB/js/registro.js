@@ -35,11 +35,6 @@ formulario.addEventListener("submit", async (e) => {
 		return;
 	}
 
-	if (leeUsuarioStorage(usuario.value.trim())) {
-		mensaje.textContent = `El usuario "${usuario.value.trim()}" ya está registrado.`;
-		return;
-	}
-
 	if (telefono.value.trim() && !PATRON_TELEFONO.test(telefono.value.trim())) {
 		mensaje.textContent = "Teléfono no válido (9 dígitos; empieza por 6-9).";
 		return;

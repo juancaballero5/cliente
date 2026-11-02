@@ -1,8 +1,9 @@
 "use strict";
 
 const RAIZ = new URL("../", document.currentScript.src);
-
-// PORTADA, LOGIN y FOTO_DEFECTO: fuera de la función (ver nota abajo)
+const PORTADA = new URL("index.html", RAIZ).href;
+const LOGIN = new URL("login.html", RAIZ).href;
+const FOTO_DEFECTO = new URL("./img/user.png", RAIZ).pathname;
 
 // Fuera de la función, con let: las leen rutas.js y usuarios.js
 let sesion = null;

@@ -23,15 +23,6 @@ const tbody = document.querySelector("#tablaUsuarios tbody");
 
 let imagenAnterior = "";
 
-function fileToDataURL(file) {
-	return new Promise((resolve, reject) => {
-		const lector = new FileReader();
-		lector.onload = () => resolve(lector.result);
-		lector.onerror = () => reject("Error al leer el archivo");
-		lector.readAsDataURL(file);
-	});
-}
-
 async function mensajeValidacion(usuarioValor, passwordValor, telefonoValor, emailValor, cpValor, usuarioAnterior) {
 	if (!PATRON_USUARIO.test(usuarioValor)) {
 		return "Usuario no válido (minúsculas, números o _; 3-16 caracteres; empieza por letra).";
@@ -80,17 +71,6 @@ function usuarioGuardar(nombreValor, usuarioValor, passwordValor, telefonoValor,
 
 listarUsuarios();
 
-function esAdmin() {
-	const sesion = leeSesion();
-	return sesion !== null && sesion.usuario === "admin";
-}
-
-if (!esAdmin()) {
-	window.location.href = "./login.html";
-} else {
-	pintarTabla();
-}
-
 formRegistro.addEventListener("submit", async (e) => {
 	e.preventDefault();
 
@@ -123,7 +103,7 @@ formRegistro.addEventListener("submit", async (e) => {
 		dataURL
 	);
 
-	guardaUsuarioDB(user);
+	await guardaUsuarioDB(user);
 
 	imagen.value = "";
 	imagenAnterior = ""
@@ -131,12 +111,12 @@ formRegistro.addEventListener("submit", async (e) => {
 	vistaPrevia.hidden = true;
 
 	mensaje.textContent = `Usuario "${user.usuario}" registrado correctamente.`;
-	listarUsuarios();
+	await listarUsuarios();
 
 });
 
 async function listarUsuarios() {
-	const usuarios = await leeSesionesDB();
+	const usuarios = await leeUsuariosDB();
 	tbody.textContent = "";
 
 	if (usuarios.length === 0) {
@@ -239,7 +219,7 @@ async function grabarFila(user, fila) {
 		campos.push(fila.children[i].querySelector("input"));
 	}
 
-	const aviso = mensajeValidacion(
+	const aviso = await mensajeValidacion(
 		campos[1].value.trim(),
 		campos[2].value.trim(),
 		campos[3].value.trim(),
@@ -269,7 +249,7 @@ async function grabarFila(user, fila) {
 	);
 
 	if (actualizado.usuario != user.usuario) {
-		await borraUsuarioStorage(user.usuario);
+		await borraUsuarioDB(user.usuario);
 	}
 	await guardaUsuarioDB(actualizado);
 	mensaje.textContent = `Usuario "${actualizado.usuario}" actualizado.`;

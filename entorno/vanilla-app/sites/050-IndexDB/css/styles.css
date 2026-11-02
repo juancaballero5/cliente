@@ -172,3 +172,19 @@ main {
 .navbar .derecha {
     margin-left: auto;
 }
+
+/* Foto en la tabla de usuarios */
+#tablaUsuarios td img {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
+}
+
+/* Vista previa del formulario de usuarios.html */
+#vistaPrevia {
+	max-width: 100px;
+	max-height: 100px;
+	object-fit: cover;
+}
