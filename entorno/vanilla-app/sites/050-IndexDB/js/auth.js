@@ -60,7 +60,6 @@ async function leeUsuarioDB(usuario) {
         const transaction = db.transaction(TABLA_USUARIOS, "readonly");
         const store = transaction.objectStore(TABLA_USUARIOS);
         const requestLeer = store.get(usuario);
-        // console.log("Objeto de la BD (leo uno)", requestLeer);
 
         requestLeer.onsuccess = () => {
             resolve(requestLeer.result);
