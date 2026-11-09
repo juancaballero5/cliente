@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo API — accesoDB</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 420px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.4;
+    }
+    h1 { font-size: 1.25rem; }
+    label { display: block; margin-top: 0.75rem; font-size: 0.9rem; }
+    input { width: 100%; padding: 0.4rem; box-sizing: border-box; }
+    button { margin-top: 1rem; margin-right: 0.5rem; padding: 0.45rem 0.9rem; }
+    #mensaje {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background: #f3f3f3;
+      min-height: 2.5rem;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+    }
+    .hint { color: #555; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>Demo: registro y login (API + MySQL)</h1>
+  <p class="hint">
+    Habla con <code>http://localhost:3000</code>.
+    Antes: <code>docker compose up -d</code> en la carpeta <code>entorno/</code>.
+  </p>
+
+  <label>Usuario
+    <input id="username" type="text" autocomplete="username" />
+  </label>
+  <label>Contraseña
+    <input id="password" type="password" autocomplete="new-password" />
+  </label>
+  <label>Nombre (solo al registrar)
+    <input id="nombre" type="text" />
+  </label>
+
+  <button type="button" id="btnRegistrar">Registrar</button>
+  <button type="button" id="btnLogin">Login</button>
+
+  <div id="mensaje">Pulsa un botón…</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

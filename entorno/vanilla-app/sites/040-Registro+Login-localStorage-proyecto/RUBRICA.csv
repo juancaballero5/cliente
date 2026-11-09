@@ -1,0 +1,29 @@
+﻿criterion,level,level_description,score
+Menú completo y enlaces reales (RA6.c),Insuficiente (1-4),"En varias páginas faltan bloques o un enlace abre otra práctica, o no llega a Registro, Login o Usuarios.",0.6
+Menú completo y enlaces reales (RA6.c),Aprobado (5-6),"Desde la portada se abren DOM, Cookies y Storage. Desde alguna práctica, la ruta relativa falla.",0.9
+Menú completo y enlaces reales (RA6.c),Notable (7-8),"Desde una práctica de cada bloque se abre el resto y se vuelve a la portada, al login y a Usuarios.",1.2
+Menú completo y enlaces reales (RA6.c),Sobresaliente (9-10),"En todas las páginas del enunciado el texto del menú y la página abierta coinciden, también al subir dos y tres niveles.",1.5
+El ejercicio 02 separa dato y mensaje (RA4.b RA5.f RA5.g),Insuficiente (1-4),"Leer o borrar un usuario que no existe acaba en la consola, o la página dice que ha tenido éxito.",0.6
+El ejercicio 02 separa dato y mensaje (RA4.b RA5.f RA5.g),Aprobado (5-6),"El caso feliz guarda, lee y borra. El usuario vacío, el duplicado o el patrón roto siguen sin un aviso claro.",0.9
+El ejercicio 02 separa dato y mensaje (RA4.b RA5.f RA5.g),Notable (7-8),Cada caso del enunciado muestra qué ha pasado. Un usuario que no existe no se da por borrado.,1.2
+El ejercicio 02 separa dato y mensaje (RA4.b RA5.f RA5.g),Sobresaliente (9-10),"La función devuelve la ficha o null. El HTML del párrafo lo escribe script.js, y el login puede reutilizar esa función para la contraseña.",1.5
+Dos almacenes en auth.js (RA3.g RA2.c RA4.b),Insuficiente (1-4),"La aplicación sigue en cookies, o cuentas y sesión comparten la misma función.",0.8
+Dos almacenes en auth.js (RA3.g RA2.c RA4.b),Aprobado (5-6),"Las cuentas nuevas están en localStorage. La sesión se guarda dentro del listado, o al borrar se vacía el almacén entero.",1.2
+Dos almacenes en auth.js (RA3.g RA2.c RA4.b),Notable (7-8),"Hay dos familias. Borrar quita una clave y guarda el resto. Algún nombre coincide con el del ejercicio 02 y, en esa página, se ejecuta la función que no toca.",1.6
+Dos almacenes en auth.js (RA3.g RA2.c RA4.b),Sobresaliente (9-10),Las constantes de las claves viven en auth.js. Quien llama no las pasa. Los nombres no pisan los del ejercicio. La ausencia es null. La lista de nombres reservados de las cookies ya no se usa.,2.0
+El registro guarda la ficha (RA5.e RA5.f RA2.d),Insuficiente (1-4),"El alta sigue escribiendo una cadena de cookie, o un usuario repetido sustituye la ficha sin aviso.",0.6
+El registro guarda la ficha (RA5.e RA5.f RA2.d),Aprobado (5-6),Un usuario nuevo queda en la clave usuarios como objeto con usuario y password. El duplicado sustituye la ficha o el aviso no dice que ya existe.,0.9
+El registro guarda la ficha (RA5.e RA5.f RA2.d),Notable (7-8),El duplicado se avisa y la ficha anterior sigue igual. El objeto se serializa con JSON.stringify.,1.2
+El registro guarda la ficha (RA5.e RA5.f RA2.d),Sobresaliente (9-10),"Registro, lectura y aviso usan la misma ficha. El nombre de la clave del objeto es el nombre de la persona. Las cuentas viejas de las cookies no se copian.",1.5
+El login comprueba la ficha y abre la sesión (RA5.f RA4.g RA3.g),Insuficiente (1-4),"Cualquier contraseña entra, o un usuario que no existe rompe la página.",0.6
+El login comprueba la ficha y abre la sesión (RA5.f RA4.g RA3.g),Aprobado (5-6),"Con la contraseña buena se entra. La sesión guarda solo el nombre, o un usuario inexistente y una contraseña mala comparten un aviso confuso.",0.9
+El login comprueba la ficha y abre la sesión (RA5.f RA4.g RA3.g),Notable (7-8),"La contraseña que se compara es la de la ficha. Si la ficha no está, la página lo dice. Al entrar se guarda nombre y fecha.",1.2
+El login comprueba la ficha y abre la sesión (RA5.f RA4.g RA3.g),Sobresaliente (9-10),"La sesión vive en la clave usuario, con la ficha completa. El mensaje habla de entrar. Cerrar esa clave se lleva nombre y fecha, y no deja restos.",1.5
+La barra sigue a la sesión (RA6.b RA6.e RA3.b),Insuficiente (1-4),"Con la sesión abierta siguen a la vista Registro y Login, o Cerrar sesión no vuelve a la portada.",0.4
+La barra sigue a la sesión (RA6.b RA6.e RA3.b),Aprobado (5-6),"Al entrar se ve el nombre. Usuarios aparece también para quien no es admin, o al cerrar sesión los bloques DOM, Cookies y Storage siguen visibles.",0.6
+La barra sigue a la sesión (RA6.b RA6.e RA3.b),Notable (7-8),"Con sesión se ven los ejercicios, el nombre y Cerrar sesión. Usuarios solo con admin. Al cerrar, vuelven Registro y Login.",0.8
+La barra sigue a la sesión (RA6.b RA6.e RA3.b),Sobresaliente (9-10),"El nombre sale de la propiedad usuario de la ficha. No hay un booleano loggedIn. Desde una práctica, admin abre Usuarios y el menú sigue mostrando Storage.",1.0
+Gestión de cuentas (RA6.d RA5.f RA2.e),Insuficiente (1-4),"La tabla no sale de la clave usuarios, o Editar ya borra la cuenta antes de confirmar.",0.4
+Gestión de cuentas (RA6.d RA5.f RA2.e),Aprobado (5-6),"Alta, listado y borrado del caso feliz funcionan. Borrar a quien ya no está parece un éxito, o borrar al usuario de la sesión deja su nombre en la barra.",0.6
+Gestión de cuentas (RA6.d RA5.f RA2.e),Notable (7-8),Borrar a quien no está devuelve null y la página lo dice. Recargar a mitad de una edición deja la cuenta guardada.,0.8
+Gestión de cuentas (RA6.d RA5.f RA2.e),Sobresaliente (9-10),"Borrar a quien tiene la sesión abierta cierra también esa sesión, incluido admin. El listado, el alta, la edición y el borrado usan la familia de las cuentas.",1.0

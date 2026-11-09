@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3 – Calculadora realista</title>
+    <link rel="icon" href="../../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="../../../js/indexedDB/indexedDB.js" defer></script>
+    <script src="../../../js/indexedDB/getIndexedDB.js" defer></script>
+    <script src="../../../js/sesion.js" defer></script>
+    <script src="../../../js/auth.js" defer></script>
+    <script src="../../../js/menu.js" defer></script>
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 03 – Calculadora realista</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Calculadora Realista</div>
+                <div class="cardBody">
+                    <form id="botonera">
+                        <div id="selectorCalculadora">
+                            <select id="selector">
+                                <option value="basica">Básica</option>
+                                <option value="cientifica">Científica</option>
+                            </select>
+                        </div>
+                        <div id="contenedorPantalla">
+                            <input type="text" id="pantalla" value="" readonly>
+                            <input type="text" id="estado" value="" readonly>
+                        </div>
+                        <div class="fila">
+                            <input type="button" id="log10" class="cientifica" value="log">
+                            <input type="button" id="memo" class="basica" value="M">
+                            <input type="button" id="borrar" class="basica" value="<=">
+                            <input type="button" id="resetear" class="basica" value="C">
+                            <input type="button" id="limpiar" class="basica" value="CE">
+                            <input type="button" id="aleatorio" class="cientifica" value="Rnd">
+                        </div>
+                        <div class="fila">
+                            <input type="button" id="ln" class="cientifica" value="ln">
+                            <input type="button" id="7" class="basica" value="7">
+                            <input type="button" id="8" class="basica" value="8">
+                            <input type="button" id="9" class="basica" value="9">
+                            <input type="button" id="dividir" class="basica" value="/">
+                            <input type="button" id="pot2" class="cientifica" value="a^2">
+                        </div>
+                        <div class="fila">
+                            <input type="button" id="e" class="cientifica" value="e">
+                            <input type="button" id="4" class="basica" value="4">
+                            <input type="button" id="5" class="basica" value="5">
+                            <input type="button" id="6" class="basica" value="6">
+                            <input type="button" id="multiplicar" class="basica" value="*">
+                            <input type="button" id="pow" class="cientifica" value="a^b">
+                        </div>
+                        <div class="fila">
+                            <input type="button" id="pi" class="cientifica" value="π">
+                            <input type="button" id="1" class="basica" value="1">
+                            <input type="button" id="2" class="basica" value="2">
+                            <input type="button" id="3" class="basica" value="3">
+                            <input type="button" id="restar" class="basica" value="-">
+                            <input type="button" id="cos" class="cientifica" value="cos">
+                        </div>
+                        <div class="fila">
+                            <input type="button" id="factorial" class="cientifica" value="!">
+                            <input type="button" id="signo" class="basica" value="+/-">
+                            <input type="button" id="0" class="basica" value="0">
+                            <input type="button" id="coma" class="basica" value=".">
+                            <input type="button" id="sumar" class="basica" value="+">
+                            <input type="button" id="sen" class="cientifica" value="sen">
+                        </div>
+                        <div class="fila">
+                            <input type="button" id="mod" class="cientifica" value="mod">
+                            <input type="button" id="inv" class="basica" value="1/x">
+                            <input type="button" id="raiz" class="basica" value="√">
+                            <input type="button" id="porcentaje" class="basica" value="%">
+                            <input type="button" id="igual" class="basica" value="=">
+                            <input type="button" id="tan" class="cientifica" value="tan">
+                        </div>
+                    </form>
+                    <p><span id="texto"></span><strong id="resultado"></strong></p>
+                </div>
+                <div class="cardFooter"><a href="../../../index.html">&gt;&gt; Página principal</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>

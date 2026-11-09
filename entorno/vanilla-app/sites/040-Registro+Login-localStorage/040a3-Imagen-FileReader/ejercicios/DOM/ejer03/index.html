@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El primero, o todos, con un selector">
+  <title>ejer03</title>
+  <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+  <link rel="stylesheet" href="../../../css/styles.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script defer src="./js/script.js"></script>
+  <script defer src="../../../js/auth.js"></script>
+  <script defer src="../../../js/menu.js"></script>
+  <script defer src="../../../js/rutas.js"></script>
+</head>
+
+<body class="paginaPrivada">
+  <header class="header">
+    <div class="header-content">
+      <p class="header-title">Ejercicios – FUNDAMENTOS DE JS (ES6)</p>
+      <p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
+      <p class="header-tagline">El primero, o todos, con un selector</p>
+    </div>
+    <div class="header-profile">
+      <img src="../../../img/user.png" alt="Foto de perfil">
+    </div>
+  </header>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+      <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+      <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">DOM</a>
+        <ul class="dropdown-content" aria-label="Submenú DOM">
+          <li><a href="../ejer01/index.html">Localizar por id</a></li>
+          <li><a href="../ejer02/index.html">Por clase o etiqueta</a></li>
+          <li><a aria-current="page">El primero o todos</a></li>
+          <li><a href="../ejer04/index.html">Leer y escribir texto</a></li>
+          <li><a href="../ejer05/index.html">Crear y quitar nodos</a></li>
+          <li><a href="../ejer06/index.html">Activar y quitar el evento</a></li>
+          <li><a href="../ejer07/index.html">Padre, hijos y hermanos</a></li>
+        </ul>
+      </li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">Cookies</a>
+        <ul class="dropdown-content" aria-label="Submenú Cookies">
+          <li><a href="../../Cookies/ejer01/index.html">Mostrar y ocultar</a></li>
+          <li><a href="../../Cookies/ejer02/index.html">Escribir, leer y borrar</a></li>
+        </ul>
+      </li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">Storage</a>
+        <ul class="dropdown-content" aria-label="Submenú Storage">
+          <li><a href="../../Storage/ejer01/index.html">Una clave por usuario</a></li>
+          <li><a href="../../Storage/ejer02/index.html">Una sola clave «usuarios»</a></li>
+          <li><a href="../../Storage/ejer03/index.html">Imagen con FileReader</a></li>
+        </ul>
+      </li>
+      <li class="enlacePublico derecha"><a href="../../../registro.html">Registro</a></li>
+      <li class="enlacePublico"><a href="../../../login.html">Login</a></li>
+      <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;"><a href="#" id="nombreUsuario"></a></li>
+      <li id="gestionUsuarios" class="enlaceAdmin" style="display: none;"><a href="../../../usuarios.html">Usuarios</a></li>
+      <li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1 class="cardTitle">Selección con querySelector() y querySelectorAll()</h1>
+        <div class="cardBody">
+          <button id="btnSelector" type="button">Usar querySelector()</button>
+          <button id="btnSelectorAll" type="button">Usar querySelectorAll()</button>
+
+          <h3>Ejemplo A</h3>
+          <p class="parrafo">Soy el primer párrafo.</p>
+          <p class="parrafo">Soy el segundo párrafo.</p>
+
+          <h3>Ejemplo B</h3>
+          <p id="especial">Soy un párrafo especial con ID.</p>
+          <p>PÁRRAFOS ENCONTRADOS:</p>
+          <div id="resultado"></div>
+        </div>
+        <div class="cardFooter">
+          <a href="../../../index.html">&gt;&gt; Página principal</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © José García ☺
+  </footer>
+</body>
+
+</html>
+

@@ -1,0 +1,40 @@
+/* 010b — header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #2a5aa3;
+  color: rgba(255, 250, 250, 0.9);
+}
+
+.header-content {
+  flex-grow: 1;
+}
+
+.header-content p {
+  margin: 0;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.header-tagline {
+  font-size: 0.875rem;
+}
+
+.header-profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}

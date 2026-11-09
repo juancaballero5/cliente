@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01 – Operaciones con Matrices</title>
+    <link rel="icon" href="../../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../../js/indexedDB/indexedDB.js" defer></script>
+    <script src="../../../js/indexedDB/getIndexedDB.js" defer></script>
+    <script src="../../../js/sesion.js" defer></script>
+    <script src="../../../js/auth.js" defer></script>
+    <script src="../../../js/menu.js" defer></script>
+    <script src="../js/aleatorio.js" defer></script>
+    <script src="../js/generaMatriz.js" defer></script>
+    <script src="../js/mostrarMatriz.js" defer></script>
+    <script src="../js/rellena.js" defer></script>
+    <script src="../js/sumarMatrices.js" defer></script>
+    <script src="../js/restarMatrices.js" defer></script>
+    <script src="../js/multiplicarMatrices.js" defer></script>
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 01 – Operaciones con Matrices</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Operaciones con Matrices</div>
+                <div class="cardBody">
+                    <fieldset>
+                        <legend>Dimensión de la matriz:</legend>
+                        <label>Dimensión cuadrada de las matrices:</label>
+                        <input id="dimension" type="text"><br><br>
+                        <input id="generar" type="button" value="Genera Matrices">&nbsp;&nbsp;
+                        <input id="sumar" type="button" value="Sumar Matrices">&nbsp;&nbsp;
+                        <input id="restar" type="button" value="Restar Matrices">&nbsp;&nbsp;
+                        <input id="multiplicar" type="button" value="Multiplicar Matrices">&nbsp;&nbsp;
+                    </fieldset>
+                    <br><br>
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th class="tabla">Matriz A</th>
+                                <th class="tabla">Matriz B</th>
+                                <th class="tabla">Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tabla">
+                                <td class="tabla">
+                                    <p id="salidaMA"></p>
+                                </td>
+                                <td class="tabla">
+                                    <p id="salidaMB"></p>
+                                </td>
+                                <td class="tabla">
+                                    <p id="salidaR"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                </div>
+                <div class="cardFooter"><a href="../../../index.html">&gt;&gt; Página principal</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>

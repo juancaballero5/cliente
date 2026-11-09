@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 01 – Transforma texto</title>
+    <link rel="icon" href="../../../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../../js/indexedDB/indexedDB.js" defer></script>
+    <script src="../../../js/indexedDB/getIndexedDB.js" defer></script>
+    <script src="../../../js/sesion.js" defer></script>
+    <script src="../../../js/auth.js" defer></script>
+    <script src="../../../js/menu.js" defer></script>
+    <script src="../js/aleatorio.js" type="text/javascript" defer></script>
+    <script src="../js/minusculas.js" type="text/javascript" defer></script>
+    <script src="../js/mayusculas.js" type="text/javascript" defer></script>
+    <script src="../js/repetir.js" type="text/javascript" defer></script>
+    <script src="./js/mostrar.js" defer></script>
+    <script src="./js/llamarAPI.js" defer></script>
+    <script src="./js/datosAPI.js" defer></script>
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+            <h4>Desarrollo WEB en entorno cliente</h4>
+            <h2>Ejercicio 01 – Transforma texto</h2>
+        </div>
+        <div class="header-profile">
+            <img src="../../../img/user.png" alt="Foto de perfil">
+        </div>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+            <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="cardTitle">Operaciones para transforma un texto</div>
+                <div class="cardBody">
+                    <fieldset>
+                        <legend>Escribe un texto:</legend>
+                        <textarea id="texto" placeholder="Introduce un texto..." rows="4" cols="75"></textarea>
+                        <br><br>
+                        <input id="mayusculas" class="boton" data-fn="A-Z" type="button" value="A-Z">
+                        <input id="minusculas" class="boton" data-fn="a-z" type="button" value="a-z">
+                        <input id="primeraMayuscula" class="boton" data-fn="A_" type="button" value="A_">
+                        <input id="ultimaMayuscula" class="boton" data-fn="_Z" type="button" value="_Z">
+                        <input id="primeraMinuscula" class="boton" data-fn="a_" type="button" value="a_">
+                        <input id="ultimaMinuscula" class="boton" data-fn="_z" type="button" value="_z">
+                        <input id="vocalesMayusculas" class="boton" data-fn="AEOIU" type="button" value="AEOIU">
+                        <input id="vocalesMinusculas" class="boton" data-fn="aeiou" type="button" value="aeiou">
+                        <input id="consonantesMayusculas" class="boton" data-fn="BC" type="button" value="BC">
+                        <input id="consonantesMinusculas" class="boton" data-fn="bc" type="button" value="bc">
+                        <br><br>
+                        <input id="aleatorio" class="boton" data-fn="🔁" type="button" value="🔁">
+                        <input id="iniciar" class="boton" data-fn="▶️" type="button" value="▶️">
+                        <input id="parar" class="boton" data-fn="⏹️" type="button" value="⏹️">
+                        <input id="acelerar" class="boton" data-fn="⏩" type="button" value="⏩">
+                        <input id="decelerar" class="boton" data-fn="⏪" type="button" value="⏪">
+                        <br><br>
+                        <input id="cargarAPI" class="boton" data-fn="⏬" type="button" value="⏬">
+                    </fieldset>
+                </div>
+                <div class="cardFooter"><a href="../../../index.html">&gt;&gt; Página principal</a></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © José García ☺
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+# Rúbrica — Proyecto IndexedDB
+
+La nota base es sobre 10. En cada indicador se pone un entero del tramo (1-4, 5-6, 7-8 o 9-10). La nota base es la suma de `nota × peso`. El bonus bilingüe se suma después y no entra en ese 10.
+
+Se corrige el enunciado. Las cuentas nuevas viven en una base de la aplicación, distinta de `050a2-Usuario-APIweb-DB`. La sesión vive en otra base. En las dos, la clave de la fila es el campo `usuario` de la ficha. Las claves `usuarios` y `sesion` de `localStorage` no se copian y no se borran.
+
+Criterios que este proyecto acredita: `RA7.a`, `RA7.b`, `RA7.d`, `RA5.f`, `RA6.b`, `RA6.d`, `RA2.c`, `RA2.d`, `RA2.e`, `RA3.b`, `RA4.b`. `localStorage` ya no es el almacén de la aplicación, así que `RA3.g` no se acredita con esta entrega.
+
+| Criterio / Indicador Técnico | Criterio de Evaluación | Insuficiente (1-4) | Aprobado (5-6) | Notable (7-8) | Sobresaliente (9-10) | Peso |
+| :--- | :---: | :--- | :--- | :--- | :--- | :---: |
+| Dos APIs en `auth.js`, dos bases | `RA7.d` `RA2.c` `RA4.b` | La aplicación sigue solo en `localStorage`, o usa la base y los nombres del ejercicio 02. | Hay funciones nuevas que abren IndexedDB y guardan una ficha. La base es la del ejercicio, o la transacción se cierra antes de terminar. | Cuentas y sesión tienen base propia. Las cuatro operaciones devuelven una promesa. Algún nombre pisa al ejercicio en la página que carga los dos scripts. | Los nombres y la base no son los del ejercicio. Las funciones de `localStorage` siguen debajo. Cada operación cierra al terminar la transacción. `keyPath` es el campo `usuario` de la ficha. | 20% |
+| El registro espera la promesa | `RA7.a` `RA7.b` `RA5.f` `RA2.d` | Cualquier nombre sale como ya registrado, o el alta sigue en `guardaUsuarioStorage`. | Un usuario nuevo crea la fila. Sin `await`, el duplicado no se distingue, o la foto sigue pasando por `FileReader`. | El `submit` es `async` y espera la lectura. Un segundo registro del mismo nombre avisa y no sustituye la ficha. | El texto de la búsqueda y el del aviso son la misma lectura. Sin archivo, `imagen` es la ruta de `user.png`. Con archivo, la fila guarda el archivo. El login, en este punto, todavía no entra con esa cuenta. | 20% |
+| El login escribe la sesión en su base | `RA7.d` `RA5.f` `RA2.e` | Una contraseña mala también entra, porque la promesa se toma como verdadera. | Con la contraseña buena se escribe algo en IndexedDB. La fila no es la ficha, o la clave no es el campo `usuario`. | `credencialCorrecta` espera la lectura. Una contraseña mala no crea fila. Una buena deja la ficha en la base de la sesión. | La barra, justo después de este cambio, sigue leyendo `localStorage` y no cambia. La fila sí está en la base de la sesión, en el origen `http://localhost:4300`. | 15% |
+| El menú lee la primera fila de la sesión | `RA7.d` `RA6.b` `RA7.a` | `get` sin clave, o un `await` en la primera línea del script, y la barra no llega a pintarse. | Tras entrar se ve el nombre. La foto de un archivo sale rota, o Cerrar sesión se engancha antes de conocer `sesion.usuario`. | La lectura de todas las filas va dentro de una función `async`. Si no hay filas, no hay sesión. Un texto vale como `src`. Un archivo pasa por `URL.createObjectURL`. | `PORTADA`, `LOGIN`, `FOTO_DEFECTO`, `sesion` y `esAdmin` siguen fuera. Cerrar sesión borra la fila `sesion.usuario` después del `await`. La práctica todavía puede saltar a Login porque la ruta aún no espera. | 15% |
+| La gestión recorre el array | `RA6.d` `RA5.f` `RA7.d` | La página trata la lectura como el objeto de `localStorage`, o Grabar no guarda porque no espera la validación. | `admin` ve la tabla. Editar o borrar la sesión abierta llega a hacerse, o el aviso muestra el input en vez de la ficha. | Alta, edición y borrado esperan la promesa. No se edita ni se borra la cuenta de la sesión. El aviso dice el nombre de la ficha. | La lectura llega como array y no se le aplica `Object.values`. El `img` y el valor de la foto no comparten nombre. Si el valor no es texto, el `src` sale de `URL.createObjectURL`. | 15% |
+| La ruta espera al menú | `RA7.d` `RA3.b` `RA2.e` | `rutas.js` mira `sesion` al cargar y una práctica con sesión vuelve a Login. | Sin sesión se llega al login. Con `admin`, Usuarios se queda solo a veces, o Atrás vuelve a la página cerrada. | Las tres llegadas del enunciado se cumplen y la redirección es `location.replace`. | La ruta espera la promesa que ya arrancó el menú y no vuelve a pintarlo. Cerrar sesión no queda enganchado dos veces. Una clave `sesion` de `localStorage` no abre la práctica. | 15% |
+| **Bonus Bilingüe (Opción A)** | *Valor añadido MPNL* | Sin documentación en inglés, o con errores graves. No suma. | README básico en inglés, con fallos de término técnico. Suma +0,5. | `README.md` y los comentarios del código en inglés técnico correcto. Suma +0,75. | `README.md`, JSDoc y los commits, con nombres de variables y funciones en inglés técnico impecable. Suma +1,0. | **+1,0 pt** |
+
+## Antes de entregar
+
+La entrega es el sitio de esta carpeta. El ejercicio 02 tiene que seguir escribiendo en `050a2-Usuario-APIweb-DB`.
+
+- Registrad un usuario nuevo y abrid IndexedDB en el origen `http://localhost:4300`. La fila está en la base de la aplicación. Sin archivo, `imagen` es la ruta de `user.png`. Con archivo, es el archivo.
+- Repetid el mismo nombre. La página avisa y la ficha no se sustituye.
+- Probad una contraseña mala: no aparece fila en la base de la sesión. Probad la buena: la clave de esa fila es el nombre de usuario.
+- Entrad y mirad la barra: nombre, foto y Cerrar sesión. Registro y Login no se ven. Cerrar sesión quita la fila y la barra vuelve a Registro y Login.
+- Entrad como `admin`. Usuarios se queda, lista las filas y no deja editar ni borrar esa sesión. El aviso, si lo forzaseis, diría el nombre de la ficha.
+- Entrad con otra cuenta: `usuarios.html` vuelve a la portada. Sin fila de sesión, una práctica vuelve al login de esta carpeta. La portada, el registro y el login se quedan.
+- Atrás, después de un salto, no devuelve a la práctica cerrada.
+- Guardad en el ejercicio 02 y comprobad que esa fila cae en `050a2-Usuario-APIweb-DB`, no en la base de la aplicación.
+- Dejad las claves `usuarios` y `sesion` de `localStorage`, y la cuenta `admin` que ya hubiera allí.

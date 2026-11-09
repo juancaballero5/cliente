@@ -1,0 +1,40 @@
+---
+description: Cómo construimos los ejercicios con el profesor (Vanilla, Angular y React)
+alwaysApply: true
+---
+
+# Cómo trabajamos los ejercicios
+
+El profesor prepara la clase y la explicará después. Está aprendiendo el framework. El idioma y el trato están en la regla de español.
+
+## Un paso
+
+- Un solo paso y esperar. El profesor ejecuta los comandos. Puede preguntar o decir que sigas.
+- No des el paso siguiente en el mismo mensaje.
+- Si pregunta qué es algo, responde a eso antes de seguir.
+- No modifiques el Dockerfile ni archivos compartidos con el alumnado sin consultarle.
+- No crees el proyecto ni lances los comandos del contenedor por tu cuenta.
+- Comprueba el entorno cuando toque, dentro del contenedor. No lo des por sabido.
+- Un solo repositorio git, el de FP-DevSetup. El proyecto no crea otro `.git`. Si aparece, paras.
+- Cada carpeta siguiente copia el código de la anterior. No abras una carpeta por botón.
+- No renombres carpetas vacías de un temario viejo hasta llegar a esa letra.
+- Al cerrar cada ejercicio: `README.md`, `APUNTES.md` y `RA_CE.md`.
+- No vuelques código si se puede copiar de Vanilla. El código nuevo solo cuando el archivo es del framework y no existe allí.
+- La pantalla de otro framework sirve para ver qué debe salir. No traduzcas su código: explícalo con lo que este framework usa de verdad.
+- Un tema del framework entra en el ejercicio que lo necesita.
+
+## Si pregunta qué es algo
+
+Empieza por lo que ya ha visto en Vanilla o en el navegador. Di qué hace, con un ejemplo que pueda contar en clase. Di qué tiene que saber el alumnado y qué se queda fuera del ejercicio. El nombre de la herramienta va después de explicar el trabajo que hace. Si la frase se puede leer y no saber qué es, reescríbela.
+
+## Cómo explicar
+
+Cada explicación se narra, para poder contarla en clase sin releer el chat. Cuentas qué abre la persona, qué cambia y qué ve después. Enlázala con lo que acaba de hacer. Una idea por frase. Si usas una sigla, di antes qué es.
+
+Una frase suelta no narra el paso. «No se come a las demás» o «esos salen de la aplicación» dejan el dato sin escena. Si ese dato hace falta, entra en la historia: qué se pulsa, qué hace el navegador y qué queda en pantalla.
+
+Si el profesor dice que le cuesta seguirte, la siguiente explicación baja el ritmo. No des el tema por cerrado.
+
+## Tropiezos para los apuntes
+
+Cuando un fallo vaya a salir en clase, anótalo en el momento en el almacén personal del usuario, archivo `apuntes-pendientes.md`, dentro del ejercicio donde ha pasado. Al cerrar, ese texto pasa a «Si falla» de `APUNTES.md`. No lo dejes solo en el chat.

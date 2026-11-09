@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mostrar y ocultar un mensaje">
+  <title>ejer01</title>
+  <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico">
+  <link rel="stylesheet" href="../../../css/styles.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script defer src="./js/script.js"></script>
+  <script defer src="../../../js/auth.js"></script>
+  <script defer src="../../../js/menu.js"></script>
+  <script defer src="../../../js/rutas.js"></script>
+</head>
+
+<body class="paginaPrivada">
+  <header class="header">
+    <div class="header-content">
+      <p class="header-title">Ejercicios – FUNDAMENTOS DE JS (ES6)</p>
+      <p class="header-subtitle">Desarrollo WEB en entorno cliente</p>
+      <p class="header-tagline">Mostrar y ocultar un mensaje</p>
+    </div>
+    <div class="header-profile">
+      <img src="../../../img/user.png" alt="Foto de perfil">
+    </div>
+  </header>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+      <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+      <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">DOM</a>
+        <ul class="dropdown-content" aria-label="Submenú DOM">
+          <li><a href="../../DOM/ejer01/index.html">Localizar por id</a></li>
+          <li><a href="../../DOM/ejer02/index.html">Por clase o etiqueta</a></li>
+          <li><a href="../../DOM/ejer03/index.html">El primero o todos</a></li>
+          <li><a href="../../DOM/ejer04/index.html">Leer y escribir texto</a></li>
+          <li><a href="../../DOM/ejer05/index.html">Crear y quitar nodos</a></li>
+          <li><a href="../../DOM/ejer06/index.html">Activar y quitar el evento</a></li>
+          <li><a href="../../DOM/ejer07/index.html">Padre, hijos y hermanos</a></li>
+        </ul>
+      </li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">Cookies</a>
+        <ul class="dropdown-content" aria-label="Submenú Cookies">
+          <li><a aria-current="page">Mostrar y ocultar</a></li>
+          <li><a href="../ejer02/index.html">Escribir, leer y borrar</a></li>
+        </ul>
+      </li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">Storage</a>
+        <ul class="dropdown-content" aria-label="Submenú Storage">
+          <li><a href="../../Storage/ejer01/index.html">Una clave por usuario</a></li>
+          <li><a href="../../Storage/ejer02/index.html">Una sola clave «usuarios»</a></li>
+          <li><a href="../../Storage/ejer03/index.html">Imagen con FileReader</a></li>
+          <li><a href="../../Storage/ejer04/index.html">Usuarios con imagen Base64</a></li>
+        </ul>
+      </li>
+      <li class="dropdown enlacePrivado" style="display: none;">
+        <a href="#" aria-haspopup="true">IndexedDB</a>
+        <ul class="dropdown-content" aria-label="Submenú IndexedDB">
+          <li><a href="../../IndexedDB/ejer01/index.html">Usuario e imagen Blob</a></li>
+        </ul>
+      </li>
+      <li class="enlacePublico derecha"><a href="../../../registro.html">Registro</a></li>
+      <li class="enlacePublico"><a href="../../../login.html">Login</a></li>
+      <li class="enlacePrivado derecha" id="usuarioSesion" style="display: none;"><a href="#" id="nombreUsuario"></a></li>
+      <li id="gestionUsuarios" class="enlaceAdmin" style="display: none;"><a href="../../../usuarios.html">Usuarios</a></li>
+      <li class="enlacePrivado" id="cerrarSesion" style="display: none;"><a href="#">Cerrar sesión</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <h1 class="cardTitle">Mostrar y ocultar elementos</h1>
+        <div class="cardBody">
+          <p>Pulsa los botones para mostrar u ocultar el mensaje oculto.</p>
+          <p>
+            <button id="mostrarBtn" type="button">Mostrar mensaje</button>
+            <button id="ocultarBtn" type="button">Ocultar mensaje</button>
+          </p>
+          <div id="mensaje" style="display: none; margin-top: 20px;">
+            ¡Hola! Este mensaje estaba oculto y ahora es visible.
+          </div>
+        </div>
+        <div class="cardFooter">
+          <a href="../../../index.html">&gt;&gt; Página principal</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © José García ☺
+  </footer>
+</body>
+
+</html>

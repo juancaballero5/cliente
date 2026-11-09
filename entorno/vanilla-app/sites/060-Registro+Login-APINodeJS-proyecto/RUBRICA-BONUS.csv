@@ -1,0 +1,5 @@
+﻿criterion,level,level_description,score
+Bonus Bilingüe (Opción A),Insuficiente (1-4),"Sin documentación en inglés, o con errores graves. No suma.",0
+Bonus Bilingüe (Opción A),Aprobado (5-6),"README básico en inglés, con fallos de término técnico. Suma +0,5.",0.5
+Bonus Bilingüe (Opción A),Notable (7-8),"README.md y los comentarios del código en inglés técnico correcto. Suma +0,75.",0.75
+Bonus Bilingüe (Opción A),Sobresaliente (9-10),"README.md, JSDoc y los commits, con nombres de variables y funciones en inglés técnico impecable. Suma +1,0.",1

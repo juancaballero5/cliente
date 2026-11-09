@@ -1,0 +1,25 @@
+﻿criterion,level,level_description,score
+"Dos APIs en auth.js, dos bases (RA7.d RA2.c RA4.b)",Insuficiente (1-4),"La aplicación sigue solo en localStorage, o usa la base y los nombres del ejercicio 02.",0.8
+"Dos APIs en auth.js, dos bases (RA7.d RA2.c RA4.b)",Aprobado (5-6),"Hay funciones nuevas que abren IndexedDB y guardan una ficha. La base es la del ejercicio, o la transacción se cierra antes de terminar.",1.2
+"Dos APIs en auth.js, dos bases (RA7.d RA2.c RA4.b)",Notable (7-8),Cuentas y sesión tienen base propia. Las cuatro operaciones devuelven una promesa. Algún nombre pisa al ejercicio en la página que carga los dos scripts.,1.6
+"Dos APIs en auth.js, dos bases (RA7.d RA2.c RA4.b)",Sobresaliente (9-10),Los nombres y la base no son los del ejercicio. Las funciones de localStorage siguen debajo. Cada operación cierra al terminar la transacción. keyPath es el campo usuario de la ficha.,2.0
+El registro espera la promesa (RA7.a RA7.b RA5.f RA2.d),Insuficiente (1-4),"Cualquier nombre sale como ya registrado, o el alta sigue en guardaUsuarioStorage.",0.8
+El registro espera la promesa (RA7.a RA7.b RA5.f RA2.d),Aprobado (5-6),"Un usuario nuevo crea la fila. Sin await, el duplicado no se distingue, o la foto sigue pasando por FileReader.",1.2
+El registro espera la promesa (RA7.a RA7.b RA5.f RA2.d),Notable (7-8),El submit es async y espera la lectura. Un segundo registro del mismo nombre avisa y no sustituye la ficha.,1.6
+El registro espera la promesa (RA7.a RA7.b RA5.f RA2.d),Sobresaliente (9-10),"El texto de la búsqueda y el del aviso son la misma lectura. Sin archivo, imagen es la ruta de user.png. Con archivo, la fila guarda el archivo. El login, en este punto, todavía no entra con esa cuenta.",2.0
+El login escribe la sesión en su base (RA7.d RA5.f RA2.e),Insuficiente (1-4),"Una contraseña mala también entra, porque la promesa se toma como verdadera.",0.6
+El login escribe la sesión en su base (RA7.d RA5.f RA2.e),Aprobado (5-6),"Con la contraseña buena se escribe algo en IndexedDB. La fila no es la ficha, o la clave no es el campo usuario.",0.9
+El login escribe la sesión en su base (RA7.d RA5.f RA2.e),Notable (7-8),credencialCorrecta espera la lectura. Una contraseña mala no crea fila. Una buena deja la ficha en la base de la sesión.,1.2
+El login escribe la sesión en su base (RA7.d RA5.f RA2.e),Sobresaliente (9-10),"La barra, justo después de este cambio, sigue leyendo localStorage y no cambia. La fila sí está en la base de la sesión, en el origen http://localhost:4300.",1.5
+El menú lee la primera fila de la sesión (RA7.d RA6.b RA7.a),Insuficiente (1-4),"get sin clave, o un await en la primera línea del script, y la barra no llega a pintarse.",0.6
+El menú lee la primera fila de la sesión (RA7.d RA6.b RA7.a),Aprobado (5-6),"Tras entrar se ve el nombre. La foto de un archivo sale rota, o Cerrar sesión se engancha antes de conocer sesion.usuario.",0.9
+El menú lee la primera fila de la sesión (RA7.d RA6.b RA7.a),Notable (7-8),"La lectura de todas las filas va dentro de una función async. Si no hay filas, no hay sesión. Un texto vale como src. Un archivo pasa por URL.createObjectURL.",1.2
+El menú lee la primera fila de la sesión (RA7.d RA6.b RA7.a),Sobresaliente (9-10),"PORTADA, LOGIN, FOTO_DEFECTO, sesion y esAdmin siguen fuera. Cerrar sesión borra la fila sesion.usuario después del await. La práctica todavía puede saltar a Login porque la ruta aún no espera.",1.5
+La gestión recorre el array (RA6.d RA5.f RA7.d),Insuficiente (1-4),"La página trata la lectura como el objeto de localStorage, o Grabar no guarda porque no espera la validación.",0.6
+La gestión recorre el array (RA6.d RA5.f RA7.d),Aprobado (5-6),"admin ve la tabla. Editar o borrar la sesión abierta llega a hacerse, o el aviso muestra el input en vez de la ficha.",0.9
+La gestión recorre el array (RA6.d RA5.f RA7.d),Notable (7-8),"Alta, edición y borrado esperan la promesa. No se edita ni se borra la cuenta de la sesión. El aviso dice el nombre de la ficha.",1.2
+La gestión recorre el array (RA6.d RA5.f RA7.d),Sobresaliente (9-10),"La lectura llega como array y no se le aplica Object.values. El img y el valor de la foto no comparten nombre. Si el valor no es texto, el src sale de URL.createObjectURL.",1.5
+La ruta espera al menú (RA7.d RA3.b RA2.e),Insuficiente (1-4),rutas.js mira sesion al cargar y una práctica con sesión vuelve a Login.,0.6
+La ruta espera al menú (RA7.d RA3.b RA2.e),Aprobado (5-6),"Sin sesión se llega al login. Con admin, Usuarios se queda solo a veces, o Atrás vuelve a la página cerrada.",0.9
+La ruta espera al menú (RA7.d RA3.b RA2.e),Notable (7-8),Las tres llegadas del enunciado se cumplen y la redirección es location.replace.,1.2
+La ruta espera al menú (RA7.d RA3.b RA2.e),Sobresaliente (9-10),La ruta espera la promesa que ya arrancó el menú y no vuelve a pintarlo. Cerrar sesión no queda enganchado dos veces. Una clave sesion de localStorage no abre la práctica.,1.5

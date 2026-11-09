@@ -1,0 +1,18 @@
+---
+description: Criterio de apuntes (solo si se editan APUNTES / transparencias)
+globs: "**/sites/**/APUNTES.md,**/sites/**/APUNTES.slides.md,**/sites/APUNTES-CRITERIO.md"
+alwaysApply: false
+---
+
+# Apuntes y transparencias
+
+Esta regla **solo** aplica al trabajar con `APUNTES.md`, `APUNTES.slides.md` o `APUNTES-CRITERIO.md`.
+En el resto de tareas del repo, ignórala.
+
+**Obligatorio en ese caso:** lee y sigue
+
+`entorno/vanilla-app/sites/APUNTES-CRITERIO.md`
+
+No inventes otro formato. No generes transparencias ni ejecutes `build-marp-slides.sh`.
+
+Si el profesor cambia el criterio, se edita `APUNTES-CRITERIO.md`.

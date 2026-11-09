@@ -1,0 +1,42 @@
+# Dependencias
+node_modules/
+**/node_modules/
+
+# Builds
+dist/
+**/dist/
+build/
+**/build/
+.next/
+.angular/
+
+# Entorno y secretos (por si alguien los crea más adelante)
+.env
+.env.*
+!.env.example
+
+# Logs y caché
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.cache/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Los proyectos de Angular/React/Vanilla SÍ se versionan (trabajo de clase).
+# Solo se ignoran node_modules/ y dist/ (arriba).
+
+# Copias del dump: no deben estar en entorno/db/ (Docker ejecuta todos los .sql)
+*_BACKUP.sql
+*backup*.sql
+
+# Material solo del docente (no va al kit / repo del curso)
+DOCENTE-*
+*.pdf
+*.pptx

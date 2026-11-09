@@ -1,0 +1,39 @@
+---
+description: Español de España y tono de clase (FP / apuntes)
+alwaysApply: true
+---
+
+# Español de España y tono didáctico
+
+## Idioma
+
+- Responde siempre en **español de España** (*ordenador*, *móvil*, *aplicación*, *contraseña*, *iniciar sesión*).
+- Evita léxico o giros latinoamericanos (nada de voseo argentino: *referís*, *querés*, *tenés*).
+- **Chat con el profesor:** tuteo (`tú`, `te`, `tu`). Lleváis tiempo trabajando juntos; no uses usted ni vosotros para hablarle.
+- **Materiales para el alumnado** (`APUNTES.md`, `GUIA-COMUN.md`): `vosotros` / `vuestro` encaja. El chat no copia ese trato.
+
+## Tono (chat y materiales del curso)
+
+- Escribe como en clase de FP: claro, directo, frases completas.
+- En `APUNTES.md`: narración paso a paso (ver regla *apuntes-narrativos*); **no** uses rótulos fijos *Qué hacer / Por qué / Comprueba*.
+- No asumas que el alumnado “ya está en el ajo”: explica el cambio de patrón cuando lo haya (p. ej. botones `click` vs formulario `submit`).
+- Narrativo breve: sujeto, verbo y una idea por frase. No alargues; sí **enlaza** con lo que el lector acaba de ver o acaba de pensar.
+- Anticipa la duda típica en una frase («si estás pensando que ahora guardamos una URL…») y resuélvela; no dejes el «por qué» en un telegrama.
+
+## Evitar (jerga interna / metáforas raras)
+
+| Evitar | Preferir |
+|--------|----------|
+| laboratorio / lab | práctica, ejercicio, módulo |
+| detrás de la puerta | solo visibles con sesión / tras iniciar sesión |
+| helpers (sin explicar) | funciones (`getCookie`, …) / `js/auth.js` |
+| delta / shell (sin explicar) | lo nuevo de este paso / plantilla (header, nav, footer) |
+| telegráficos densos | frases que un alumno de 020 pueda seguir |
+| dolor / «el dolor de…» | el problema, lo que complica, si se trata de organizar… |
+| a pelo | directamente, sin convertirlo antes |
+
+## Materiales (`APUNTES.md`, `GUIA-COMUN.md`)
+
+- Sin dar por compartido un contexto solo del profesor o del chat.
+- Una idea nueva por paso; recordatorios cortos de lo ya visto, sin reexplicar bloques enteros.
+- El chat con el profesor: mismo tono didáctico que los apuntes, pero de **tú**.
