@@ -20,6 +20,8 @@ WORKDIR /usr/src/app
 # Atajos del curso (se cargan al entrar con bash).
 # Uso: docker compose exec angular22 bash
 RUN echo 'alias ng-new="ng new --style=css --no-ssr --ai-config=none"' >> /root/.bashrc
-RUN echo 'alias ng-serve="ng serve --host 0.0.0.0"' >> /root/.bashrc
+# Docker en Windows no avisa al contenedor de que un archivo ha cambiado.
+# --poll 2000 mira los archivos cada dos segundos. En el Mac también vale.
+RUN echo 'alias ng-serve="ng serve --host 0.0.0.0 --poll 2000"' >> /root/.bashrc
 
 CMD ["bash"]
