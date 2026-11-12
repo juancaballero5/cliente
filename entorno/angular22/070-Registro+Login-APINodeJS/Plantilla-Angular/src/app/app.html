@@ -16,21 +16,21 @@
       <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
 
       <li class="dropdown">
-        <a href="#" aria-haspopup="true">LocalStorage</a>
-        <ul class="dropdown-content" aria-label="Submenú de LocalStorage">
-          <li><a href="#">CRUD LocalStorage</a></li>
+        <a href="#" aria-haspopup="true">localStorage</a>
+        <ul class="dropdown-content" aria-label="Submenú de localStorage">
+          <li><a routerLink="/crud-local-storage">CRUD localStorage</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#" aria-haspopup="true">IndexedDB</a>
         <ul class="dropdown-content" aria-label="Submenú de IndexedDB">
-          <li><a href="#">CRUD IndexedDB</a></li>
+          <li><a routerLink="/crud-indexed-db">CRUD IndexedDB</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#" aria-haspopup="true">APINodeJS</a>
         <ul class="dropdown-content" aria-label="Submenú de APINodeJS">
-          <li><a href="#">CRUD APINodeJS</a></li>
+          <li><a routerLink="/crud-api-node">CRUD APINodeJS</a></li>
         </ul>
       </li>
 
@@ -38,10 +38,7 @@
   </nav>
 
   <main>
-    <section class="intro">
-      <h1>Bienvenido</h1>
-      <p>Selecciona un ejercicio desde el menú superior para empezar.</p>
-    </section>
+    <router-outlet />
   </main>
 
   <footer class="footer">
