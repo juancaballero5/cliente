@@ -2,7 +2,7 @@
     <div class="card">
         <h1 class="cardTitle">Usuario en localStorage</h1>
         <div class="cardBody">
-            <form id="formulario" action="#">
+            <form id="formulario" #formulario action="#">
             <p>Guardamos las cuentas juntas en <code>localStorage</code>.</p>
             <p>Cada cuenta añade la dirección. <br />La foto se guarda como texto. <br />Si la casilla pide un <code>Blob</code>, se convierte antes de guardar.</p>
             <p>Pedir a la API rellena el formulario. <br />El nombre, el teléfono y la dirección salen de randomuser. <br />La casilla elige la foto: <br />  - marcada, un <code>Blob</code> de otra API; <br />  - sin marcar, la dirección de la miniatura de randomuser.</p>
@@ -55,14 +55,14 @@
                     <label for="fotoBlob">Foto como Blob (Dicebear). Sin marcar, miniatura de randomuser.</label>
                 </p>
                 <p>
-                    <button id="guardar" type="button">Guardar</button>
+                    <button id="guardar" type="button" (click)="guardar(formulario)">Guardar</button>
                     <button id="leer" type="button">Leer</button>
                     <button id="borrar" type="button">Borrar</button>
                     <button id="esperar" type="button">Simular espera (10 s)</button>
                     <button id="pedirAPI" type="button">Pedir a la API</button>
                 </p>
                 <p>El botón de espera no bloquea la página: puedes seguir escribiendo y guardar mientras cuenta.</p>
-                <div id="resultado"></div>
+                <div id="resultado">{{ resultado }}</div>
             </form>
         </div>
         <div class="cardFooter">
