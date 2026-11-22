@@ -4,7 +4,7 @@ import { UsuariosLocalStorage } from '../usuarios-local-storage';
 import { fileToDataURL, mensajeDeValidacion, usuarioParaGuardar } from '../usuario-formulario';
 import { Usuario } from '../usuario';
 
-const FOTO_DEFECTO = '/img/user.png';
+const FOTO_DEFECTO = "/img/user.png";
 
 @Component({
   imports: [RouterLink],
